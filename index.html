@@ -27,300 +27,95 @@
 }
 html{scroll-behavior:smooth;}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;line-height:1.6;}
-
-/* ── SCROLLBAR ── */
 ::-webkit-scrollbar{width:5px;}
 ::-webkit-scrollbar-track{background:var(--gray-100);}
 ::-webkit-scrollbar-thumb{background:var(--blue-mid);border-radius:3px;}
-
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:300;
-  background:var(--white);
-  border-bottom:2px solid var(--blue-deep);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 5%;height:68px;
-}
+nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--white);border-bottom:2px solid var(--blue-deep);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;}
 .nav-brand{display:flex;align-items:center;gap:14px;}
-.nav-brand-mark{
-  width:38px;height:38px;border-radius:6px;
-  background:var(--blue-deep);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Playfair Display',serif;
-  font-size:1rem;font-weight:700;color:var(--white);
-  letter-spacing:0.02em;
-}
-.nav-brand-name{
-  font-size:0.9rem;font-weight:700;color:var(--blue-deep);
-  letter-spacing:0.01em;line-height:1.2;
-}
+.nav-brand-mark{width:38px;height:38px;border-radius:6px;background:var(--blue-deep);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);letter-spacing:0.02em;}
+.nav-brand-name{font-size:0.9rem;font-weight:700;color:var(--blue-deep);letter-spacing:0.01em;line-height:1.2;}
 .nav-brand-title{font-size:0.72rem;color:var(--text-muted);font-weight:400;}
 .nav-links{display:flex;gap:2rem;list-style:none;}
-.nav-links a{
-  text-decoration:none;color:var(--text-muted);
-  font-size:0.82rem;font-weight:600;letter-spacing:0.04em;
-  text-transform:uppercase;transition:color 0.2s;
-  padding-bottom:2px;border-bottom:2px solid transparent;
-}
+.nav-links a{text-decoration:none;color:var(--text-muted);font-size:0.82rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s;padding-bottom:2px;border-bottom:2px solid transparent;}
 .nav-links a:hover{color:var(--blue-deep);border-bottom-color:var(--blue-bright);}
-.nav-cta{
-  background:var(--blue-deep);color:var(--white);
-  padding:0.55rem 1.5rem;border-radius:4px;
-  font-size:0.8rem;font-weight:700;letter-spacing:0.06em;
-  text-transform:uppercase;text-decoration:none;
-  border:2px solid var(--blue-deep);
-  transition:background 0.2s,color 0.2s;
-}
+.nav-cta{background:var(--blue-deep);color:var(--white);padding:0.55rem 1.5rem;border-radius:4px;font-size:0.8rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;border:2px solid var(--blue-deep);transition:background 0.2s,color 0.2s;}
 .nav-cta:hover{background:var(--white);color:var(--blue-deep);}
-
-/* ── HERO ── */
-#hero{
-  padding-top:68px;
-  display:grid;grid-template-columns:1fr 420px;
-  min-height:100vh;
-}
-.hero-left{
-  background:var(--blue-deep);
-  padding:5rem 5% 4rem 5%;
-  display:flex;flex-direction:column;justify-content:center;
-  position:relative;overflow:hidden;
-}
-.hero-left::before{
-  content:'';position:absolute;
-  top:-120px;right:-120px;
-  width:400px;height:400px;border-radius:50%;
-  background:rgba(255,255,255,0.04);
-}
-.hero-left::after{
-  content:'';position:absolute;
-  bottom:-80px;left:-60px;
-  width:280px;height:280px;border-radius:50%;
-  background:rgba(255,255,255,0.03);
-}
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
-  background:rgba(255,255,255,0.1);
-  border:1px solid rgba(255,255,255,0.2);
-  border-radius:100px;
-  padding:0.4rem 1rem;
-  margin-bottom:2rem;
-  width:fit-content;
-}
+#hero{padding-top:68px;display:grid;grid-template-columns:1fr 420px;min-height:100vh;}
+.hero-left{background:var(--blue-deep);padding:5rem 5% 4rem 5%;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+.hero-left::before{content:'';position:absolute;top:-120px;right:-120px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hero-left::after{content:'';position:absolute;bottom:-80px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.03);}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:100px;padding:0.4rem 1rem;margin-bottom:2rem;width:fit-content;}
 .hero-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:#4ADE80;flex-shrink:0;animation:glow 2s infinite;}
 @keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,0.5)}50%{box-shadow:0 0 0 5px rgba(74,222,128,0)}}
 .hero-eyebrow-text{font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.8);letter-spacing:0.06em;text-transform:uppercase;}
-.hero-name{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2.4rem,4.5vw,3.8rem);
-  font-weight:700;color:var(--white);
-  line-height:1.1;letter-spacing:-0.01em;
-  margin-bottom:0.5rem;
-}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:700;color:var(--white);line-height:1.1;letter-spacing:-0.01em;margin-bottom:0.5rem;}
 .hero-name span{color:rgba(255,255,255,0.45);font-weight:600;}
-.hero-credential{
-  display:inline-flex;align-items:center;gap:8px;
-  margin-bottom:1.8rem;
-}
-.cred-pill{
-  background:rgba(255,255,255,0.12);
-  border:1px solid rgba(255,255,255,0.2);
-  border-radius:3px;
-  padding:0.3rem 0.8rem;
-  font-size:0.72rem;font-weight:700;
-  color:rgba(255,255,255,0.85);
-  letter-spacing:0.08em;text-transform:uppercase;
-  font-family:'DM Mono',monospace;
-}
-.hero-desc{
-  font-size:1.05rem;line-height:1.85;
-  color:rgba(255,255,255,0.65);
-  max-width:540px;margin-bottom:2.5rem;
-  font-weight:300;
-}
+.hero-credential{display:inline-flex;align-items:center;gap:8px;margin-bottom:1.8rem;flex-wrap:wrap;}
+.cred-pill{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:3px;padding:0.3rem 0.8rem;font-size:0.72rem;font-weight:700;color:rgba(255,255,255,0.85);letter-spacing:0.08em;text-transform:uppercase;font-family:'DM Mono',monospace;}
+.hero-desc{font-size:1.05rem;line-height:1.85;color:rgba(255,255,255,0.65);max-width:540px;margin-bottom:2.5rem;font-weight:300;}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem;}
-.btn-white{
-  background:var(--white);color:var(--blue-deep);
-  padding:0.8rem 2rem;border-radius:4px;
-  font-weight:700;font-size:0.85rem;
-  letter-spacing:0.04em;text-transform:uppercase;
-  text-decoration:none;
-  border:2px solid var(--white);
-  transition:background 0.2s,color 0.2s;
-}
+.btn-white{background:var(--white);color:var(--blue-deep);padding:0.8rem 2rem;border-radius:4px;font-weight:700;font-size:0.85rem;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;border:2px solid var(--white);transition:background 0.2s,color 0.2s;}
 .btn-white:hover{background:transparent;color:var(--white);}
-.btn-outline-white{
-  background:transparent;color:rgba(255,255,255,0.85);
-  padding:0.8rem 2rem;border-radius:4px;
-  font-weight:600;font-size:0.85rem;
-  letter-spacing:0.04em;text-transform:uppercase;
-  text-decoration:none;
-  border:2px solid rgba(255,255,255,0.3);
-  transition:border-color 0.2s,color 0.2s;
-}
+.btn-outline-white{background:transparent;color:rgba(255,255,255,0.85);padding:0.8rem 2rem;border-radius:4px;font-weight:600;font-size:0.85rem;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;border:2px solid rgba(255,255,255,0.3);transition:border-color 0.2s,color 0.2s;}
 .btn-outline-white:hover{border-color:rgba(255,255,255,0.7);color:var(--white);}
 .hero-divider{border:none;border-top:1px solid rgba(255,255,255,0.12);margin-bottom:2rem;}
 .hero-stats{display:flex;gap:3rem;}
-
-.hstat-num{
-  font-family:'Playfair Display',serif;
-  font-size:2.2rem;font-weight:700;color:var(--white);
-  line-height:1;
-}
+.hstat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--white);line-height:1;}
 .hstat-label{font-size:0.75rem;color:rgba(255,255,255,0.5);font-weight:500;margin-top:4px;letter-spacing:0.04em;}
-
-/* hero right */
-.hero-right{
-  background:var(--blue-xlight);
-  border-left:1px solid var(--border);
-  padding:3rem 2.5rem;
-  display:flex;flex-direction:column;gap:1.2rem;
-  justify-content:center;
-}
-.hr-label{
-  font-size:0.68rem;font-weight:700;
-  text-transform:uppercase;letter-spacing:0.12em;
-  color:var(--blue-mid);margin-bottom:0.6rem;
-}
-.expertise-card{
-  background:var(--white);border:1px solid var(--border);
-  border-radius:8px;padding:1.2rem 1.4rem;
-  border-left:4px solid var(--blue-deep);
-  transition:border-left-color 0.2s,box-shadow 0.2s;
-}
+.hero-right{background:var(--blue-xlight);border-left:1px solid var(--border);padding:3rem 2.5rem;display:flex;flex-direction:column;gap:1.2rem;justify-content:center;}
+.hr-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--blue-mid);margin-bottom:0.6rem;}
+.expertise-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.2rem 1.4rem;border-left:4px solid var(--blue-deep);transition:border-left-color 0.2s,box-shadow 0.2s;}
 .expertise-card:hover{border-left-color:var(--blue-bright);box-shadow:0 4px 16px rgba(0,58,107,0.1);}
 .ec-title{font-size:0.88rem;font-weight:700;color:var(--blue-deep);margin-bottom:0.4rem;}
 .ec-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.5rem;}
-.ec-tag{
-  background:var(--blue-light);color:var(--blue-mid);
-  font-size:0.68rem;font-weight:600;
-  padding:0.2rem 0.6rem;border-radius:3px;
-  font-family:'DM Mono',monospace;
-  letter-spacing:0.04em;
-}
-.cert-highlight{
-  background:var(--blue-deep);
-  border-radius:8px;padding:1.2rem 1.4rem;
-  display:flex;align-items:center;gap:1rem;
-  margin-top:0.5rem;
-}
+.ec-tag{background:var(--blue-light);color:var(--blue-mid);font-size:0.68rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:3px;font-family:'DM Mono',monospace;letter-spacing:0.04em;}
+.cert-highlight{background:var(--blue-deep);border-radius:8px;padding:1.2rem 1.4rem;display:flex;align-items:center;gap:1rem;margin-top:0.5rem;}
 .cert-icon{font-size:1.5rem;}
 .cert-hl-label{font-size:0.65rem;color:rgba(255,255,255,0.6);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.2rem;}
 .cert-hl-name{font-size:0.85rem;font-weight:700;color:var(--white);}
-
-/* ── SECTION COMMON ── */
 section{padding:5.5rem 5%;}
 .sec-header{margin-bottom:3rem;}
-.sec-kicker{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:0.72rem;font-weight:700;
-  text-transform:uppercase;letter-spacing:0.14em;
-  color:var(--blue-bright);margin-bottom:0.7rem;
-}
+.sec-kicker{display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--blue-bright);margin-bottom:0.7rem;}
 .sec-kicker::before{content:'';display:block;width:18px;height:2px;background:var(--blue-bright);}
-.sec-title{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(1.8rem,3.5vw,2.8rem);
-  font-weight:700;color:var(--blue-deep);
-  line-height:1.15;letter-spacing:-0.01em;
-}
-.sec-subtitle{
-  font-size:1rem;color:var(--text-muted);
-  line-height:1.7;margin-top:0.8rem;
-  max-width:580px;
-}
-
-/* ── DOMAIN EXPERTISE ── */
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--blue-deep);line-height:1.15;letter-spacing:-0.01em;}
+.sec-subtitle{font-size:1rem;color:var(--text-muted);line-height:1.7;margin-top:0.8rem;max-width:580px;}
 #domain{background:var(--white);}
 .domain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-.domain-card{
-  border:1px solid var(--border);border-radius:10px;
-  padding:2rem;background:var(--white);
-  transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;
-  position:relative;overflow:hidden;
-}
-.domain-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--blue-deep),var(--blue-bright));
-}
+.domain-card{border:1px solid var(--border);border-radius:10px;padding:2rem;background:var(--white);transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;position:relative;overflow:hidden;}
+.domain-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue-deep),var(--blue-bright));}
 .domain-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,58,107,0.1);border-color:var(--blue-bright);}
-.dc-icon{
-  width:48px;height:48px;border-radius:8px;
-  background:var(--blue-light);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.3rem;margin-bottom:1.2rem;
-}
+.dc-icon{width:48px;height:48px;border-radius:8px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.2rem;}
 .dc-title{font-size:1rem;font-weight:700;color:var(--blue-deep);margin-bottom:0.5rem;}
 .dc-desc{font-size:0.85rem;color:var(--text-muted);line-height:1.65;margin-bottom:1rem;}
 .dc-tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
-.dc-tag{
-  background:var(--blue-xlight);border:1px solid var(--border);
-  color:var(--blue-mid);font-size:0.68rem;font-weight:600;
-  padding:0.2rem 0.55rem;border-radius:3px;
-  font-family:'DM Mono',monospace;
-}
-
-/* ── ABOUT ── */
+.dc-tag{background:var(--blue-xlight);border:1px solid var(--border);color:var(--blue-mid);font-size:0.68rem;font-weight:600;padding:0.2rem 0.55rem;border-radius:3px;font-family:'DM Mono',monospace;}
 #about{background:var(--gray-50);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .about-layout{display:grid;grid-template-columns:1fr 380px;gap:5rem;align-items:start;}
 .about-body{font-size:1rem;color:var(--text-muted);line-height:1.85;}
 .about-body p+p{margin-top:1.2rem;}
 .about-body strong{color:var(--blue-deep);font-weight:700;}
-.about-pull{
-  margin:2rem 0;padding:1.5rem 2rem;
-  border-left:4px solid var(--blue-deep);
-  background:var(--blue-xlight);
-  border-radius:0 8px 8px 0;
-}
+.about-pull{margin:2rem 0;padding:1.5rem 2rem;border-left:4px solid var(--blue-deep);background:var(--blue-xlight);border-radius:0 8px 8px 0;}
 .about-pull p{font-size:1.05rem;color:var(--blue-deep);font-weight:600;line-height:1.6;font-style:italic;}
-.profile-card{
-  background:var(--white);border:1px solid var(--border);
-  border-radius:10px;overflow:hidden;
-  box-shadow:0 4px 20px rgba(0,58,107,0.06);
-}
-.profile-card-top{
-  background:var(--blue-deep);padding:1.8rem;
-  display:flex;flex-direction:column;align-items:center;text-align:center;
-}
-.avatar{
-  width:80px;height:80px;border-radius:50%;
-  background:rgba(255,255,255,0.15);
-  border:3px solid rgba(255,255,255,0.3);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Playfair Display',serif;
-  font-size:2rem;font-weight:700;color:var(--white);
-  margin-bottom:1rem;
-}
+.profile-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,58,107,0.06);}
+.profile-card-top{background:var(--blue-deep);padding:1.8rem;display:flex;flex-direction:column;align-items:center;text-align:center;}
+.avatar{width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.15);border:3px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--white);margin-bottom:1rem;}
 .profile-name{font-size:1rem;font-weight:700;color:var(--white);margin-bottom:0.2rem;}
 .profile-role{font-size:0.78rem;color:rgba(255,255,255,0.6);}
 .profile-card-body{padding:1.4rem;}
-.profile-row{
-  display:flex;align-items:flex-start;gap:0.8rem;
-  padding:0.7rem 0;border-bottom:1px solid var(--gray-200);
-}
+.profile-row{display:flex;align-items:flex-start;gap:0.8rem;padding:0.7rem 0;border-bottom:1px solid var(--gray-200);}
 .profile-row:last-child{border-bottom:none;}
 .pr-icon{font-size:0.9rem;margin-top:2px;flex-shrink:0;}
 .pr-key{font-size:0.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.15rem;}
 .pr-val{font-size:0.85rem;color:var(--blue-deep);font-weight:600;}
 .pr-val.green{color:#15803D;}
-
-/* ── EXPERIENCE ── */
 #experience{background:var(--white);}
 .exp-layout{display:grid;grid-template-columns:200px 1fr;gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
-.exp-sidebar{
-  background:var(--blue-xlight);
-  border-right:1px solid var(--border);
-}
-.exp-sidebar-top{
-  background:var(--blue-deep);padding:1.5rem;
-}
+.exp-sidebar{background:var(--blue-xlight);border-right:1px solid var(--border);}
+.exp-sidebar-top{background:var(--blue-deep);padding:1.5rem;}
 .exp-sidebar-label{font-size:0.68rem;font-weight:700;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem;}
 .exp-sidebar-count{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--white);}
 .exp-sidebar-sub{font-size:0.75rem;color:rgba(255,255,255,0.5);}
-.exp-tab{
-  padding:1rem 1.2rem;
-  border-bottom:1px solid var(--border);
-  cursor:pointer;transition:background 0.15s;
-}
+.exp-tab{padding:1rem 1.2rem;border-bottom:1px solid var(--border);cursor:pointer;transition:background 0.15s;}
 .exp-tab:hover{background:rgba(0,58,107,0.05);}
 .exp-tab.active{background:var(--white);border-right:3px solid var(--blue-deep);}
 .exp-tab-co{font-size:0.82rem;font-weight:700;color:var(--blue-deep);margin-bottom:0.15rem;}
@@ -329,236 +124,66 @@ section{padding:5.5rem 5%;}
 .exp-content{padding:2.5rem 3rem;}
 .exp-panel{display:none;}
 .exp-panel.active{display:block;}
-.exp-co-name{
-  font-family:'Playfair Display',serif;
-  font-size:1.7rem;font-weight:700;color:var(--blue-deep);
-  margin-bottom:0.3rem;
-}
+.exp-co-name{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--blue-deep);margin-bottom:0.3rem;}
 .exp-badges{display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;margin-bottom:1.5rem;}
-.exp-badge-role{
-  background:var(--blue-light);color:var(--blue-deep);
-  font-size:0.78rem;font-weight:700;
-  padding:0.3rem 0.8rem;border-radius:4px;
-}
-.exp-badge-period{
-  background:var(--gray-100);color:var(--text-muted);
-  font-size:0.72rem;font-weight:600;
-  padding:0.3rem 0.7rem;border-radius:4px;
-  font-family:'DM Mono',monospace;
-}
-.exp-badge-loc{
-  font-size:0.78rem;color:var(--text-muted);
-  display:flex;align-items:center;gap:4px;
-}
+.exp-badge-role{background:var(--blue-light);color:var(--blue-deep);font-size:0.78rem;font-weight:700;padding:0.3rem 0.8rem;border-radius:4px;}
+.exp-badge-period{background:var(--gray-100);color:var(--text-muted);font-size:0.72rem;font-weight:600;padding:0.3rem 0.7rem;border-radius:4px;font-family:'DM Mono',monospace;}
+.exp-badge-loc{font-size:0.78rem;color:var(--text-muted);display:flex;align-items:center;gap:4px;}
 .exp-bullets{list-style:none;margin-bottom:1.8rem;display:flex;flex-direction:column;gap:0.75rem;}
-.exp-bullets li{
-  font-size:0.9rem;color:var(--text-muted);
-  line-height:1.7;padding-left:1.2rem;position:relative;
-}
-.exp-bullets li::before{
-  content:'';position:absolute;left:0;top:0.65rem;
-  width:5px;height:5px;border-radius:50%;
-  background:var(--blue-bright);
-}
-.exp-stack-row{
-  display:flex;flex-wrap:wrap;gap:0.4rem;
-  padding-top:1.2rem;border-top:1px solid var(--gray-200);
-}
-.exp-stack-pill{
-  background:var(--blue-xlight);
-  border:1px solid var(--border);
-  color:var(--blue-mid);
-  font-size:0.7rem;font-weight:600;
-  padding:0.22rem 0.6rem;border-radius:3px;
-  font-family:'DM Mono',monospace;
-}
-/* ── PROJECTS ── */
-#projects{
-  background:var(--gray-50);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
-.projects-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1.5rem;
-}
-.project-card{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:10px;
-  padding:1.8rem;
-  transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;
-  position:relative;
-  overflow:hidden;
-}
-.project-card::before{
-  content:'';
-  position:absolute;
-  top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--blue-deep),var(--blue-bright));
-}
-.project-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 36px rgba(0,58,107,0.1);
-  border-color:var(--blue-bright);
-}
-.project-type{
-  font-size:0.65rem;
-  font-weight:700;
-  color:var(--blue-bright);
-  text-transform:uppercase;
-  letter-spacing:0.12em;
-  margin-bottom:0.7rem;
-}
-.project-title{
-  font-size:1rem;
-  font-weight:700;
-  color:var(--blue-deep);
-  line-height:1.4;
-  margin-bottom:0.7rem;
-}
-.project-desc{
-  font-size:0.86rem;
-  color:var(--text-muted);
-  line-height:1.7;
-  margin-bottom:1rem;
-}
-.project-points{
-  list-style:none;
-  display:flex;
-  flex-direction:column;
-  gap:0.55rem;
-  margin-bottom:1.1rem;
-}
-.project-points li{
-  font-size:0.8rem;
-  color:var(--text-muted);
-  line-height:1.6;
-  padding-left:1rem;
-  position:relative;
-}
-.project-points li::before{
-  content:'';
-  position:absolute;
-  left:0;top:0.6rem;
-  width:5px;height:5px;
-  border-radius:50%;
-  background:var(--blue-bright);
-}
-.project-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:0.4rem;
-}
-.project-tag{
-  background:var(--blue-xlight);
-  border:1px solid var(--border);
-  color:var(--blue-mid);
-  font-size:0.68rem;
-  font-weight:600;
-  padding:0.22rem 0.6rem;
-  border-radius:3px;
-  font-family:'DM Mono',monospace;
-}
-
-@media(max-width:1024px){
-  .projects-grid{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:768px){
-  .projects-grid{grid-template-columns:1fr;}
-}
-/* ── SKILLS ── */
+.exp-bullets li{font-size:0.9rem;color:var(--text-muted);line-height:1.7;padding-left:1.2rem;position:relative;}
+.exp-bullets li::before{content:'';position:absolute;left:0;top:0.65rem;width:5px;height:5px;border-radius:50%;background:var(--blue-bright);}
+.exp-stack-row{display:flex;flex-wrap:wrap;gap:0.4rem;padding-top:1.2rem;border-top:1px solid var(--gray-200);}
+.exp-stack-pill{background:var(--blue-xlight);border:1px solid var(--border);color:var(--blue-mid);font-size:0.7rem;font-weight:600;padding:0.22rem 0.6rem;border-radius:3px;font-family:'DM Mono',monospace;}
+#projects{background:var(--gray-50);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.project-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.8rem;transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;position:relative;overflow:hidden;}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue-deep),var(--blue-bright));}
+.project-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,58,107,0.1);border-color:var(--blue-bright);}
+.project-type{font-size:0.65rem;font-weight:700;color:var(--blue-bright);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.7rem;}
+.project-title{font-size:1rem;font-weight:700;color:var(--blue-deep);line-height:1.4;margin-bottom:0.7rem;}
+.project-desc{font-size:0.86rem;color:var(--text-muted);line-height:1.7;margin-bottom:1rem;}
+.project-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.project-tag{background:var(--blue-xlight);border:1px solid var(--border);color:var(--blue-mid);font-size:0.68rem;font-weight:600;padding:0.22rem 0.6rem;border-radius:3px;font-family:'DM Mono',monospace;}
 #skills{background:var(--gray-50);border-top:1px solid var(--border);}
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
-.skill-block{
-  background:var(--white);border:1px solid var(--border);
-  border-radius:8px;padding:1.6rem;
-  transition:box-shadow 0.2s;
-}
+.skill-block{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.6rem;transition:box-shadow 0.2s;}
 .skill-block:hover{box-shadow:0 6px 20px rgba(0,58,107,0.08);}
 .sb-header{display:flex;align-items:center;gap:0.7rem;margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid var(--gray-200);}
 .sb-icon{font-size:1.1rem;}
 .sb-title{font-size:0.88rem;font-weight:700;color:var(--blue-deep);}
 .sb-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
-.sb-tag{
-  background:var(--gray-50);border:1px solid var(--gray-200);
-  color:var(--gray-600);font-size:0.72rem;font-weight:500;
-  padding:0.25rem 0.6rem;border-radius:3px;
-  font-family:'DM Mono',monospace;
-}
-
-/* ── CERTIFICATIONS ── */
+.sb-tag{background:var(--gray-50);border:1px solid var(--gray-200);color:var(--gray-600);font-size:0.72rem;font-weight:500;padding:0.25rem 0.6rem;border-radius:3px;font-family:'DM Mono',monospace;}
 #certifications{background:var(--white);border-top:1px solid var(--border);}
 .creds-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
 .certs-list{display:flex;flex-direction:column;gap:1rem;}
-.cert-row{
-  background:var(--white);border:1px solid var(--border);
-  border-radius:8px;padding:1.3rem 1.5rem;
-  display:flex;align-items:center;gap:1.2rem;
-  transition:border-color 0.2s,box-shadow 0.2s;
-}
+.cert-row{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;display:flex;align-items:center;gap:1.2rem;transition:border-color 0.2s,box-shadow 0.2s;}
 .cert-row:hover{border-color:var(--blue-bright);box-shadow:0 4px 16px rgba(0,58,107,0.08);}
-.cert-row-icon{
-  width:44px;height:44px;border-radius:8px;
-  background:var(--blue-light);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.2rem;flex-shrink:0;
-}
+.cert-row-icon{width:44px;height:44px;border-radius:8px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
 .cert-row-cat{font-size:0.65rem;font-weight:700;color:var(--blue-bright);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;}
 .cert-row-name{font-size:0.88rem;font-weight:700;color:var(--blue-deep);line-height:1.35;}
-.edu-block{
-  background:var(--blue-deep);
-  border-radius:10px;padding:2.5rem;color:var(--white);
-  position:relative;overflow:hidden;
-}
-.edu-block::after{
-  content:'';position:absolute;bottom:-40px;right:-40px;
-  width:200px;height:200px;border-radius:50%;
-  background:rgba(255,255,255,0.04);
-}
+.edu-block{background:var(--blue-deep);border-radius:10px;padding:2.5rem;color:var(--white);position:relative;overflow:hidden;}
+.edu-block::after{content:'';position:absolute;bottom:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.04);}
 .edu-kicker{font-size:0.68rem;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:1rem;}
-.edu-degree{
-  font-family:'Playfair Display',serif;
-  font-size:1.45rem;font-weight:700;
-  color:var(--white);line-height:1.25;margin-bottom:0.6rem;
-}
-.edu-school{font-size:0.95rem;color:rgba(255,255,255,0.65);margin-bottom:2rem;}
-.edu-gpa-box{
-  display:inline-flex;align-items:baseline;gap:0.5rem;
-  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);
-  border-radius:6px;padding:0.8rem 1.4rem;
-}
-.edu-gpa-num{
-  font-family:'Playfair Display',serif;
-  font-size:2.5rem;font-weight:700;color:var(--white);line-height:1;
-}
+.edu-degree{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:700;color:var(--white);line-height:1.25;margin-bottom:0.6rem;}
+.edu-school{font-size:0.95rem;color:rgba(255,255,255,0.65);margin-bottom:1.5rem;}
+.edu-gpa-box{display:inline-flex;align-items:baseline;gap:0.5rem;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:6px;padding:0.8rem 1.4rem;}
+.edu-gpa-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--white);line-height:1;}
 .edu-gpa-label{font-size:0.8rem;color:rgba(255,255,255,0.6);font-weight:500;}
-.edu-year{margin-top:1.5rem;font-size:0.78rem;color:rgba(255,255,255,0.45);font-family:'DM Mono',monospace;}
-
-/* ── CONTACT ── */
+.edu-year{margin-top:1rem;font-size:0.78rem;color:rgba(255,255,255,0.45);font-family:'DM Mono',monospace;}
+.edu-divider{border:none;border-top:1px solid rgba(255,255,255,0.15);margin:1.5rem 0;}
+.edu-degree-secondary{font-size:1rem;font-weight:600;color:rgba(255,255,255,0.85);line-height:1.25;margin-bottom:0.4rem;}
+.edu-school-secondary{font-size:0.85rem;color:rgba(255,255,255,0.5);}
 #contact{background:var(--gray-50);border-top:1px solid var(--border);}
 .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 .contact-desc{font-size:1rem;color:var(--text-muted);line-height:1.75;margin-bottom:2rem;}
 .contact-links{display:flex;flex-direction:column;gap:0.9rem;}
-.contact-link{
-  display:flex;align-items:center;gap:1rem;
-  padding:1rem 1.4rem;
-  background:var(--white);border:1px solid var(--border);
-  border-radius:8px;text-decoration:none;
-  transition:border-color 0.2s,box-shadow 0.2s;
-}
+.contact-link{display:flex;align-items:center;gap:1rem;padding:1rem 1.4rem;background:var(--white);border:1px solid var(--border);border-radius:8px;text-decoration:none;transition:border-color 0.2s,box-shadow 0.2s;}
 .contact-link:hover{border-color:var(--blue-bright);box-shadow:0 4px 16px rgba(0,58,107,0.08);}
 .cl-icon{width:38px;height:38px;border-radius:7px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
 .cl-label{font-size:0.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.15rem;}
 .cl-val{font-size:0.88rem;font-weight:700;color:var(--blue-deep);}
-.avail-panel{
-  background:var(--white);border:1px solid var(--border);
-  border-radius:10px;overflow:hidden;
-}
-.avail-top{
-  background:var(--blue-deep);padding:1.8rem 2rem;
-}
+.avail-panel{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.avail-top{background:var(--blue-deep);padding:1.8rem 2rem;}
 .avail-dot-row{display:flex;align-items:center;gap:8px;margin-bottom:0.8rem;}
 .avail-dot{width:9px;height:9px;border-radius:50%;background:#4ADE80;animation:glow 2s infinite;}
 .avail-status-text{font-size:0.72rem;font-weight:700;color:#4ADE80;letter-spacing:0.1em;text-transform:uppercase;}
@@ -568,31 +193,23 @@ section{padding:5.5rem 5%;}
 .avail-item-icon{font-size:1rem;margin-top:1px;flex-shrink:0;}
 .avail-item-text{font-size:0.88rem;color:var(--text-muted);line-height:1.6;}
 .avail-item-text strong{color:var(--blue-deep);}
-
-/* ── FOOTER ── */
-footer{
-  background:var(--blue-deep);color:var(--white);
-  padding:2rem 5%;
-  display:flex;align-items:center;justify-content:space-between;
-  border-top:3px solid var(--blue-bright);
-}
+footer{background:var(--blue-deep);color:var(--white);padding:2rem 5%;display:flex;align-items:center;justify-content:space-between;border-top:3px solid var(--blue-bright);}
 .footer-brand{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;}
 .footer-brand span{font-family:'Plus Jakarta Sans',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.5);display:block;font-weight:400;margin-top:2px;}
 .footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.4);}
-
-/* ── RESPONSIVE ── */
 @media(max-width:1024px){
   #hero{grid-template-columns:1fr;}
   .hero-right{display:none;}
   .about-layout,.creds-layout,.contact-layout{grid-template-columns:1fr;gap:2.5rem;}
   .domain-grid,.skills-grid{grid-template-columns:1fr 1fr;}
+  .projects-grid{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:768px){
   nav{padding:0 4%;}
   .nav-links{display:none;}
   section{padding:4rem 4%;}
   #hero .hero-left{padding:4rem 4%;}
-  .domain-grid,.skills-grid{grid-template-columns:1fr;}
+  .domain-grid,.skills-grid,.projects-grid{grid-template-columns:1fr;}
   .exp-layout{grid-template-columns:1fr;border:none;border-radius:0;}
   .exp-sidebar{display:none;}
   .exp-panel{display:block;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
@@ -628,7 +245,7 @@ footer{
   <div class="hero-left">
     <div class="hero-eyebrow">
       <div class="hero-eyebrow-dot"></div>
-      <span class="hero-eyebrow-text">Open to New Opportunities · Denver, CO</span>
+      <span class="hero-eyebrow-text">Open to New Opportunities · Aurora, CO</span>
     </div>
     <h1 class="hero-name">
       Pavan Kumar Goud<br>
@@ -637,10 +254,10 @@ footer{
     <div class="hero-credential">
       <span class="cred-pill">Healthcare Data Analyst</span>
       <span class="cred-pill">MS Health Informatics</span>
-      <span class="cred-pill">Certified Microsoft Power BI Data Analyst Associate(PL-300)</span>
+      <span class="cred-pill">Microsoft PL-300 Certified</span>
     </div>
     <p class="hero-desc">
-      3+ years transforming clinical, claims, and operational healthcare data into strategic insights that improve patient outcomes, drive revenue performance, and ensure compliance — across US hospital systems and health tech organizations.
+      5+ years transforming clinical, claims, and operational healthcare data into strategic insights that improve patient outcomes, drive revenue performance, and ensure compliance — across US hospital systems and health tech organizations.
     </p>
     <div class="hero-actions">
       <a href="#domain" class="btn-white">View Expertise</a>
@@ -649,7 +266,7 @@ footer{
     <hr class="hero-divider">
     <div class="hero-stats">
       <div class="hstat">
-        <div class="hstat-num">3+</div>
+        <div class="hstat-num">5+</div>
         <div class="hstat-label">Years Experience</div>
       </div>
       <div class="hstat">
@@ -672,39 +289,25 @@ footer{
     <div class="expertise-card">
       <div class="ec-title">Revenue Cycle &amp; Claims Analytics</div>
       <div class="ec-tags">
-        <span class="ec-tag">835/837 Claims</span>
-        <span class="ec-tag">Clinical Quality Metrics</span>
-        <span class="ec-tag">LOS & Readmissions</span>
-        <span class="ec-tag">AR Days</span>
-        <span class="ec-tag">Denial Rates</span>
-        <span class="ec-tag">RCM KPIs</span>
+        <span class="ec-tag">835/837 Claims</span><span class="ec-tag">Clinical Quality Metrics</span><span class="ec-tag">LOS &amp; Readmissions</span><span class="ec-tag">AR Days</span><span class="ec-tag">Denial Rates</span><span class="ec-tag">RCM KPIs</span>
       </div>
     </div>
     <div class="expertise-card">
       <div class="ec-title">Population Health &amp; CCM</div>
       <div class="ec-tags">
-        <span class="ec-tag">CMS Data</span>
-        <span class="ec-tag">Cohort Analysis</span>
-        <span class="ec-tag">NPI Registry</span>
-        <span class="ec-tag">Risk Stratification</span>
+        <span class="ec-tag">CMS Data</span><span class="ec-tag">Cohort Analysis</span><span class="ec-tag">NPI Registry</span><span class="ec-tag">Risk Stratification</span>
       </div>
     </div>
     <div class="expertise-card">
       <div class="ec-title">Clinical &amp; EHR Analytics</div>
       <div class="ec-tags">
-        <span class="ec-tag">Epic</span>
-        <span class="ec-tag">Meditech</span>
-        <span class="ec-tag">ADT Data</span>
-        <span class="ec-tag">LOS &amp; Readmissions</span>
+        <span class="ec-tag">Epic</span><span class="ec-tag">Meditech</span><span class="ec-tag">ADT Data</span><span class="ec-tag">LOS &amp; Readmissions</span>
       </div>
     </div>
     <div class="expertise-card">
       <div class="ec-title">Data Quality &amp; Compliance</div>
       <div class="ec-tags">
-        <span class="ec-tag">HIPAA</span>
-        <span class="ec-tag">ICD-10-CM</span>
-        <span class="ec-tag">CPT · HCPCS</span>
-        <span class="ec-tag">Data Governance</span>
+        <span class="ec-tag">HIPAA</span><span class="ec-tag">ICD-10-CM</span><span class="ec-tag">CPT · HCPCS</span><span class="ec-tag">Data Governance</span>
       </div>
     </div>
     <div class="cert-highlight">
@@ -728,50 +331,38 @@ footer{
     <div class="domain-card">
       <div class="dc-icon">💰</div>
       <div class="dc-title">Revenue Cycle Analytics</div>
-      <div class="dc-desc">Analyzing claims, billing, and payer datasets to identify denial trends, reimbursement patterns, and AR performance. Automated reporting cut turnaround time by 40%.</div>
-      <div class="dc-tags">
-        <span class="dc-tag">DNFB</span><span class="dc-tag">AR Days</span><span class="dc-tag">Payer Mix</span><span class="dc-tag">835/837</span>
-      </div>
+      <div class="dc-desc">Analyzing claims, billing, and payer datasets to identify denial trends, reimbursement patterns, and AR performance. Automated reporting cut turnaround time by 40% and improved collections efficiency by ~15%.</div>
+      <div class="dc-tags"><span class="dc-tag">DNFB</span><span class="dc-tag">AR Days</span><span class="dc-tag">Payer Mix</span><span class="dc-tag">835/837</span></div>
     </div>
     <div class="domain-card">
       <div class="dc-icon">👥</div>
       <div class="dc-title">Population Health &amp; CCM</div>
       <div class="dc-desc">Building cohort and provider segmentation models for Chronic Care Management programs — identifying high-risk populations and estimating $15K–$25K monthly revenue per practice.</div>
-      <div class="dc-tags">
-        <span class="dc-tag">CMS Data</span><span class="dc-tag">Risk Models</span><span class="dc-tag">NPI Registry</span><span class="dc-tag">Medicare</span>
-      </div>
+      <div class="dc-tags"><span class="dc-tag">CMS Data</span><span class="dc-tag">Risk Models</span><span class="dc-tag">NPI Registry</span><span class="dc-tag">Medicare</span></div>
     </div>
     <div class="domain-card">
       <div class="dc-icon">🏥</div>
       <div class="dc-title">Clinical &amp; EHR Analytics</div>
       <div class="dc-desc">Leveraging EHR and ADT data to identify trends in length of stay, readmissions, and patient flow. Delivering dashboards for hospital leadership census and outcome monitoring.</div>
-      <div class="dc-tags">
-        <span class="dc-tag">Epic</span><span class="dc-tag">Meditech</span><span class="dc-tag">ADT Data</span><span class="dc-tag">Readmissions</span>
-      </div>
+      <div class="dc-tags"><span class="dc-tag">Epic</span><span class="dc-tag">Meditech</span><span class="dc-tag">ADT Data</span><span class="dc-tag">Readmissions</span></div>
     </div>
     <div class="domain-card">
       <div class="dc-icon">📊</div>
       <div class="dc-title">Power BI Dashboard Development</div>
       <div class="dc-desc">Designing and deploying interactive dashboards for clinical, operational, and executive stakeholders — tracking KPIs from eligibility and utilization to provider performance.</div>
-      <div class="dc-tags">
-        <span class="dc-tag">DAX</span><span class="dc-tag">Data Modeling</span><span class="dc-tag">KPI Reporting</span><span class="dc-tag">PL-300</span>
-      </div>
+      <div class="dc-tags"><span class="dc-tag">DAX</span><span class="dc-tag">Data Modeling</span><span class="dc-tag">KPI Reporting</span><span class="dc-tag">PL-300</span></div>
     </div>
     <div class="domain-card">
       <div class="dc-icon">🔒</div>
       <div class="dc-title">Data Quality &amp; HIPAA Compliance</div>
       <div class="dc-desc">Implementing validation frameworks that improved dataset accuracy by 25%. Conducting audits using ICD-10, CPT coding standards, and maintaining HIPAA-compliant governance.</div>
-      <div class="dc-tags">
-        <span class="dc-tag">HIPAA</span><span class="dc-tag">ICD-10-CM</span><span class="dc-tag">CPT · HCPCS</span><span class="dc-tag">Audit Frameworks</span>
-      </div>
+      <div class="dc-tags"><span class="dc-tag">HIPAA</span><span class="dc-tag">ICD-10-CM</span><span class="dc-tag">CPT · HCPCS</span><span class="dc-tag">Audit Frameworks</span></div>
     </div>
     <div class="domain-card">
       <div class="dc-icon">⚙️</div>
       <div class="dc-title">SQL &amp; Data Engineering</div>
       <div class="dc-desc">Building scalable SQL-driven analytic pipelines using PostgreSQL and SQL Server — from ETL design to cohort models that feed executive-level reporting and strategic planning.</div>
-      <div class="dc-tags">
-        <span class="dc-tag">PostgreSQL</span><span class="dc-tag">SQL Server</span><span class="dc-tag">ETL Pipelines</span><span class="dc-tag">Python</span>
-      </div>
+      <div class="dc-tags"><span class="dc-tag">PostgreSQL</span><span class="dc-tag">SQL Server</span><span class="dc-tag">ETL Pipelines</span><span class="dc-tag">Python</span></div>
     </div>
   </div>
 </section>
@@ -785,10 +376,10 @@ footer{
   <div class="about-layout">
     <div>
       <div class="about-body">
-        <p>I'm Pavan Kumar Goud Javaji — a Healthcare Data Analyst with a career built at the intersection of clinical knowledge, data engineering, and strategic communication. My work is driven by a single belief: <strong>better data leads to better patient care and stronger organizations.</strong></p>
+        <p>I'm Pavan Kumar Goud Javaji — a Healthcare Data &amp; Intelligence professional with <strong>5 years of experience</strong> specializing in transforming complex healthcare data into actionable growth strategies across revenue cycle and population health.</p>
         <p>With a <strong>Master of Science in Health Informatics from the University of Denver (GPA: 4.0)</strong> and a Microsoft PL-300 certification, I bring both academic depth and hands-on technical expertise to every engagement. My experience spans the full breadth of healthcare data — from revenue cycle and claims analytics to clinical operations, population health, and regulatory compliance.</p>
         <div class="about-pull">
-          <p>"I've worked across hospital systems, specialty care, and health tech — always with the same goal: transform raw data into decisions that matter."</p>
+          <p>"I lead end-to-end data strategy for physician outreach — from CMS-based pipelines and provider opportunity scoring to AI-enabled call transcript analysis and geographic targeting."</p>
         </div>
         <p>I've delivered measurable impact at every role — <strong>reducing reporting turnaround by 40%</strong> at Pertexa, <strong>improving claim accuracy by 18%</strong> at KIMS Hospital, and <strong>building cohort models that identified $15K–$25K in monthly revenue per practice.</strong> My experience spans organizations in both the <strong>United States and India</strong>, giving me a uniquely global perspective on healthcare data governance and operations.</p>
       </div>
@@ -803,7 +394,7 @@ footer{
         <div class="profile-card-body">
           <div class="profile-row">
             <span class="pr-icon">📍</span>
-            <div><div class="pr-key">Location</div><div class="pr-val">Denver, CO, USA</div></div>
+            <div><div class="pr-key">Location</div><div class="pr-val">Aurora, CO, USA</div></div>
           </div>
           <div class="profile-row">
             <span class="pr-icon">🎓</span>
@@ -820,6 +411,10 @@ footer{
           <div class="profile-row">
             <span class="pr-icon">✉️</span>
             <div><div class="pr-key">Email</div><div class="pr-val" style="font-size:0.78rem;">pavankumarjavaji117@gmail.com</div></div>
+          </div>
+          <div class="profile-row">
+            <span class="pr-icon">💻</span>
+            <div><div class="pr-key">Portfolio</div><div class="pr-val" style="font-size:0.78rem;">pavankumarjavaji117-eng.github.io</div></div>
           </div>
           <div class="profile-row">
             <span class="pr-icon">🟢</span>
@@ -855,34 +450,36 @@ footer{
       </div>
       <div class="exp-tab" onclick="showExp('e3',this)">
         <div class="exp-tab-co">PAM Health</div>
-        <div class="exp-tab-yr">May 2025 – Nov 2025</div>
+        <div class="exp-tab-yr">Mar 2025 – Nov 2025</div>
       </div>
       <div class="exp-tab" onclick="showExp('e4',this)">
-        <div class="exp-tab-co">KIMS Hospital</div>
+        <div class="exp-tab-co">KIMS Hospitals</div>
         <div class="exp-tab-yr">Jan 2023 – Dec 2023</div>
       </div>
       <div class="exp-tab" onclick="showExp('e5',this)">
         <div class="exp-tab-co">Apollo Hospitals</div>
-        <div class="exp-tab-yr">Aug 2021 – Dec 2022</div>
+        <div class="exp-tab-yr">Mar 2020 – Dec 2022</div>
       </div>
     </div>
     <div class="exp-content">
+
+      <!-- E1 -->
       <div class="exp-panel active" id="e1">
         <div class="exp-co-name">Pertexa Health Tech</div>
         <div class="exp-badges">
-          <span class="exp-badge-role">Data Analyst &amp; Intelligence Lead — CCM Initiative</span>
-          <span class="exp-badge-period">Mar 2026 – Present</span>
+          <span class="exp-badge-role">Data Analyst &amp; Intelligence Lead — Provider Growth &amp; AI Analytics (CCM)</span>
+          <span class="exp-badge-period">Mar 2026 – Present · 2 mos</span>
           <span class="exp-badge-loc">📍 Las Vegas, NV</span>
         </div>
         <ul class="exp-bullets">
-          <li>Built SQL-driven analytic datasets using CMS, NPI, and utilization data to support population health and Chronic Care Management programs.</li>
-          <li>Developed cohort and provider segmentation models identifying high-risk patient populations, estimating ~$15K–$25K monthly revenue per practice.</li>
-          <li>Improved provider targeting and outreach effectiveness by ~20% through healthcare claims and engagement data analysis.</li>
-          <li>Developed Power BI dashboards tracking patient eligibility, utilization, and provider performance for data-driven decision-making.</li>
-          <li>Implemented data validation frameworks, improving dataset accuracy by ~25% and ensuring HIPAA &amp; CMS compliance.</li>
-          <li>Delivered performance analytics and KPI reporting to cross-functional clinical, operational, and business stakeholders.</li>
-          <li>Applied cohort-based statistical analysis to identify high-risk patient populations and revenue opportunities for CCM programs.</li>
-           <li>Translated complex healthcare datasets into actionable insights through dashboards and reports for leadership decision-making.</li>
+          <li>Built SQL-driven analytic datasets using CMS, NPI, and utilization data to support population health and Chronic Care Management (CCM) programs.</li>
+          <li>Developed cohort and provider segmentation models identifying high-risk patient populations and high-value practices, estimating ~$15K–$25K monthly revenue per practice.</li>
+          <li>Analyzed healthcare claims and engagement data to uncover utilization trends, improving provider targeting and outreach effectiveness by ~20%.</li>
+          <li>Developed Power BI dashboards tracking patient eligibility, utilization, and provider performance, enabling data-driven decision-making.</li>
+          <li>Implemented data validation frameworks, improving dataset accuracy by ~25% and ensuring compliance with HIPAA and CMS standards.</li>
+          <li>Collaborated with clinical, operational, and business stakeholders to deliver actionable insights improving care delivery and operational performance.</li>
+          <li>Drove AI-enabled analytics including call transcript analysis and outreach intelligence to optimize provider engagement strategies.</li>
+          <li>Translated complex healthcare datasets into actionable insights through dashboards and reports for leadership decision-making.</li>
         </ul>
         <div class="exp-stack-row">
           <span class="exp-stack-pill">SQL · PostgreSQL</span>
@@ -895,18 +492,20 @@ footer{
           <span class="exp-stack-pill">Git</span>
         </div>
       </div>
+
+      <!-- E2 -->
       <div class="exp-panel" id="e2">
         <div class="exp-co-name">Pertexa Health Tech</div>
         <div class="exp-badges">
-          <span class="exp-badge-role">Healthcare Data Analyst — Revenue Cycle &amp; Claims</span>
-          <span class="exp-badge-period">Dec 2025 – Feb 2026</span>
+          <span class="exp-badge-role">Healthcare Data Analyst — Revenue Cycle &amp; Claims Analytics</span>
+          <span class="exp-badge-period">Dec 2025 – Feb 2026 · 3 mos</span>
           <span class="exp-badge-loc">📍 Las Vegas, NV</span>
         </div>
         <ul class="exp-bullets">
-          <li>Analyzed claims, billing, and payer datasets to identify trends in denial rates, reimbursement patterns, and AR performance.</li>
-          <li>Built dashboards tracking key RCM KPIs: DNFB, AR days, payer mix, and utilization rates.</li>
+          <li>Analyzed claims, billing, and payer datasets to identify trends in denial rates, reimbursement patterns, and AR performance, contributing to ~15% improvement in collections efficiency.</li>
+          <li>Built dashboards tracking key RCM KPIs (DNFB, AR days, payer mix, utilization), improving financial visibility for leadership.</li>
           <li>Automated SQL-based reporting workflows, reducing reporting turnaround time by ~40%.</li>
-          <li>Conducted data validation across claims datasets to ensure accuracy and compliance standards.</li>
+          <li>Conducted data quality validation across claims datasets to ensure reporting accuracy and compliance.</li>
         </ul>
         <div class="exp-stack-row">
           <span class="exp-stack-pill">SQL Server</span>
@@ -916,20 +515,22 @@ footer{
           <span class="exp-stack-pill">Claims 835/837</span>
         </div>
       </div>
+
+      <!-- E3 -->
       <div class="exp-panel" id="e3">
-        <div class="exp-co-name">PAM Health Specialty Hospital</div>
+        <div class="exp-co-name">PAM Health Specialty Hospital of Denver</div>
         <div class="exp-badges">
-          <span class="exp-badge-role">Healthcare Data Analyst — Clinical &amp; Operational</span>
-          <span class="exp-badge-period">May 2025 – Nov 2025</span>
-          <span class="exp-badge-loc">📍 Denver, CO</span>
+          <span class="exp-badge-role">Healthcare Data Analyst — Clinical &amp; Operational Analytics</span>
+          <span class="exp-badge-period">Mar 2025 – Nov 2025 · 9 mos</span>
+          <span class="exp-badge-loc">📍 Colorado, United States</span>
         </div>
         <ul class="exp-bullets">
-          <li>Analyzed EHR and ADT data to identify trends in length of stay, readmissions, and patient flow across inpatient units.</li>
-          <li>Built dashboards and operational reports for hospital leadership to monitor census and clinical outcomes.</li>
-          <li>Conducted cohort analysis to identify key drivers of readmission rates.</li>
-          <li>Improved reporting workflows, reducing reporting time by ~20%.</li>
-          <li>Analyzed clinical quality metrics including length of stay (LOS), readmissions, and patient flow to support operational improvements.</li>
-           <li>Worked with structured EHR data aligned with HL7/FHIR concepts to understand interoperability and patient data flow.</li>
+          <li>Analyzed EHR and ADT data to identify trends in length of stay (LOS), readmissions, and patient flow, supporting clinical and operational improvements.</li>
+          <li>Built dashboards and reports for hospital leadership to monitor census, utilization, and patient outcomes.</li>
+          <li>Conducted cohort analysis on patient populations to identify drivers of readmissions and care outcomes.</li>
+          <li>Improved reporting workflows, reducing report generation time by ~20%.</li>
+          <li>Analyzed clinical quality metrics including LOS, readmissions, and patient flow to support operational improvements.</li>
+          <li>Worked with structured EHR data aligned with HL7/FHIR concepts to understand interoperability and patient data flow.</li>
         </ul>
         <div class="exp-stack-row">
           <span class="exp-stack-pill">SQL</span>
@@ -939,18 +540,20 @@ footer{
           <span class="exp-stack-pill">ADT Data</span>
         </div>
       </div>
+
+      <!-- E4 -->
       <div class="exp-panel" id="e4">
-        <div class="exp-co-name">KIMS Hospital</div>
+        <div class="exp-co-name">KIMS Hospitals</div>
         <div class="exp-badges">
           <span class="exp-badge-role">Healthcare Data Analyst — Data Quality &amp; Compliance</span>
-          <span class="exp-badge-period">Jan 2023 – Dec 2023</span>
+          <span class="exp-badge-period">Jan 2023 – Dec 2023 · 1 yr</span>
           <span class="exp-badge-loc">📍 Hyderabad, India</span>
         </div>
         <ul class="exp-bullets">
-          <li>Performed data validation and audits on EHR and claims datasets, improving claim accuracy by ~18%.</li>
-          <li>Conducted root cause analysis using ICD-10 and CPT coding standards to resolve coding errors.</li>
-          <li>Developed data quality monitoring reports and dashboards for compliance teams.</li>
-          <li>Ensured HIPAA-compliant data governance practices across all healthcare datasets.</li>
+          <li>Performed data validation and quality audits on EHR and claims datasets, improving claim accuracy by ~18%.</li>
+          <li>Conducted root cause analysis using ICD and CPT coding standards to identify discrepancies.</li>
+          <li>Developed data quality monitoring reports, improving data integrity across clinical and financial systems.</li>
+          <li>Ensured compliance with HIPAA and healthcare data governance standards.</li>
         </ul>
         <div class="exp-stack-row">
           <span class="exp-stack-pill">SQL</span>
@@ -960,18 +563,20 @@ footer{
           <span class="exp-stack-pill">Audit Frameworks</span>
         </div>
       </div>
+
+      <!-- E5 -->
       <div class="exp-panel" id="e5">
         <div class="exp-co-name">Apollo Hospitals</div>
         <div class="exp-badges">
-          <span class="exp-badge-role">Healthcare Data Analyst — Patient Access &amp; Operations</span>
-          <span class="exp-badge-period">Aug 2021 – Dec 2022</span>
+          <span class="exp-badge-role">Jr. Healthcare Data Analyst — Patient Access &amp; Operations</span>
+          <span class="exp-badge-period">Mar 2020 – Dec 2022 · 2 yrs 10 mos</span>
           <span class="exp-badge-loc">📍 Hyderabad, India</span>
         </div>
         <ul class="exp-bullets">
-          <li>Analyzed scheduling, access, and utilization data to improve patient throughput and operational efficiency.</li>
-          <li>Conducted funnel and trend analysis to identify workflow bottlenecks across patient access points.</li>
-          <li>Built operational reports supporting hospital administration decision-making.</li>
-          <li>Collaborated with clinical and administrative teams to improve data reporting accuracy.</li>
+          <li>Analyzed patient scheduling, access, and utilization data to improve patient throughput and provider efficiency by ~12%.</li>
+          <li>Conducted funnel and trend analysis to identify bottlenecks in patient access workflows.</li>
+          <li>Built operational reports supporting hospital administration and decision-making.</li>
+          <li>Collaborated with clinical and administrative teams to improve reporting accuracy and workflows.</li>
         </ul>
         <div class="exp-stack-row">
           <span class="exp-stack-pill">SQL</span>
@@ -981,125 +586,78 @@ footer{
           <span class="exp-stack-pill">Scheduling Systems</span>
         </div>
       </div>
+
     </div>
   </div>
 </section>
+
 <!-- PROJECTS -->
 <section id="projects">
   <div class="sec-header">
     <div class="sec-kicker">Projects</div>
-    <h2 class="sec-title">Academic & Applied<br>Healthcare Analytics Projects</h2>
-    <p class="sec-subtitle">
-      A selected portfolio of master’s, bachelor’s, and industry-focused work across health informatics, patient safety, healthcare finance, data warehousing, and revenue analytics.
-    </p>
+    <h2 class="sec-title">Academic &amp; Applied<br>Healthcare Analytics Projects</h2>
+    <p class="sec-subtitle">A selected portfolio of master's, bachelor's, and industry-focused work across health informatics, patient safety, healthcare finance, data warehousing, and revenue analytics.</p>
   </div>
-
   <div class="projects-grid">
     <div class="project-card">
-  <div class="project-type">Ongoing Industry Project</div>
-  <div class="project-title">Data Analyst & Intelligence Lead — CCM Physician Outreach Program</div>
-  <div class="project-desc">
-    Serving as Data &amp; Intelligence Lead for an ongoing Chronic Care Management (CCM) initiative, owning the data strategy upstream of outreach across physician targeting, lead scoring, AI-agent technical decisions, data quality review, and project coordination.
-  </div>
-  <div class="project-tags">
-    <span class="project-tag">CMS Data</span>
-    <span class="project-tag">Lead Scoring</span>
-    <span class="project-tag">Geographic Targeting</span>
-    <span class="project-tag">GHL</span>
-    <span class="project-tag">Call Transcript Analysis</span>
-    <span class="project-tag">Data Quality</span>
-    <span class="project-tag">Compliance Review</span>
-    <span class="project-tag">Project Management</span>
-  </div>
-</div>
+      <div class="project-type">Ongoing Industry Project</div>
+      <div class="project-title">Data Analyst &amp; Intelligence Lead — CCM Physician Outreach Program</div>
+      <div class="project-desc">Serving as Data &amp; Intelligence Lead for an ongoing Chronic Care Management (CCM) initiative, owning the data strategy upstream of outreach across physician targeting, lead scoring, AI-agent technical decisions, data quality review, and project coordination.</div>
+      <div class="project-tags">
+        <span class="project-tag">CMS Data</span><span class="project-tag">Lead Scoring</span><span class="project-tag">Geographic Targeting</span><span class="project-tag">GHL</span><span class="project-tag">Call Transcript Analysis</span><span class="project-tag">Data Quality</span><span class="project-tag">Compliance Review</span><span class="project-tag">Project Management</span>
+      </div>
+    </div>
     <div class="project-card">
       <div class="project-type">Industry Project</div>
       <div class="project-title">Patient 360 &amp; Revenue Cycle Analytics</div>
-      <div class="project-desc">
-        Built an end-to-end healthcare analytics project focused on patient lifetime value, churn, encounter-level revenue, utilization patterns, high-cost conditions, and demographic-based revenue insights.
-      Applied statistical techniques for cohort segmentation, trend analysis, and patient-level insights. Designed insights using data storytelling principles to support clinical and business decision-making.
-      </div>
+      <div class="project-desc">Built an end-to-end healthcare analytics project focused on patient lifetime value, churn, encounter-level revenue, utilization patterns, high-cost conditions, and demographic-based revenue insights. Applied statistical techniques for cohort segmentation and trend analysis.</div>
       <div class="project-tags">
-        <span class="project-tag">SQL</span>
-        <span class="project-tag">PostgreSQL</span>
-         <span class="project-tag">Docker</span>
-          <span class="project-tag">Python</span>
-        <span class="project-tag">Revenue Analytics</span>
-        <span class="project-tag">Patient 360</span>
+        <span class="project-tag">SQL</span><span class="project-tag">PostgreSQL</span><span class="project-tag">Docker</span><span class="project-tag">Python</span><span class="project-tag">Revenue Analytics</span><span class="project-tag">Patient 360</span>
       </div>
     </div>
-
     <div class="project-card">
-      <div class="project-type">Master’s Capstone</div>
+      <div class="project-type">Master's Capstone</div>
       <div class="project-title">Enhancing Pharmacovigilance for Older Adults Using AI</div>
-      <div class="project-desc">
-        Explored how Artificial Intelligence, Natural Language Processing, and Machine Learning can improve adverse drug reaction detection and prevention in older adults using EHR, telehealth, and clinical data sources.
-      </div>
+      <div class="project-desc">Explored how Artificial Intelligence, Natural Language Processing, and Machine Learning can improve adverse drug reaction detection and prevention in older adults using EHR, telehealth, and clinical data sources.</div>
       <div class="project-tags">
-        <span class="project-tag">AI in Healthcare</span>
-        <span class="project-tag">NLP</span>
-        <span class="project-tag">ML</span>
-        <span class="project-tag">Pharmacovigilance</span>
+        <span class="project-tag">AI in Healthcare</span><span class="project-tag">NLP</span><span class="project-tag">ML</span><span class="project-tag">Pharmacovigilance</span>
       </div>
     </div>
-
     <div class="project-card">
-      <div class="project-type">Master’s Project</div>
+      <div class="project-type">Master's Project</div>
       <div class="project-title">Healthcare Data Warehouse Development</div>
-      <div class="project-desc">
-        Designed a healthcare data warehouse with fact and dimension tables, ETL workflows, and reporting structures to support patient flow, readmissions, cost analysis, and provider performance reporting. Worked with healthcare data structures aligned to HL7/FHIR standards for data integration understanding.
-      </div>
+      <div class="project-desc">Designed a healthcare data warehouse with fact and dimension tables, ETL workflows, and reporting structures to support patient flow, readmissions, cost analysis, and provider performance reporting aligned to HL7/FHIR standards.</div>
       <div class="project-tags">
-        <span class="project-tag">SQL</span>
-        <span class="project-tag">ETL</span>
-        <span class="project-tag">Data Warehouse</span>
-        <span class="project-tag">Reporting</span>
+        <span class="project-tag">SQL</span><span class="project-tag">ETL</span><span class="project-tag">Data Warehouse</span><span class="project-tag">Reporting</span>
       </div>
     </div>
-
     <div class="project-card">
-      <div class="project-type">Master’s Project</div>
+      <div class="project-type">Master's Project</div>
       <div class="project-title">Reducing Medical Errors Through Virtual Reality Training</div>
-      <div class="project-desc">
-        Studied how virtual reality training can improve clinical skills and reduce procedural errors in medical education, especially for high-risk clinical tasks.
-      </div>
+      <div class="project-desc">Studied how virtual reality training can improve clinical skills and reduce procedural errors in medical education, especially for high-risk clinical tasks.</div>
       <div class="project-tags">
-        <span class="project-tag">Patient Safety</span>
-        <span class="project-tag">VR Training</span>
-        <span class="project-tag">Clinical Education</span>
-        <span class="project-tag">Health Informatics</span>
+        <span class="project-tag">Patient Safety</span><span class="project-tag">VR Training</span><span class="project-tag">Clinical Education</span><span class="project-tag">Health Informatics</span>
       </div>
     </div>
-
     <div class="project-card">
-      <div class="project-type">Master’s Project</div>
+      <div class="project-type">Master's Project</div>
       <div class="project-title">Financial Analysis of HCA Healthcare</div>
-      <div class="project-desc">
-        Performed financial and operational analysis of HCA Healthcare, including payer mix, profitability, revenue trends, cost structure, and strategic recommendations for growth and sustainability.
-      </div>
+      <div class="project-desc">Performed financial and operational analysis of HCA Healthcare, including payer mix, profitability, revenue trends, cost structure, and strategic recommendations for growth and sustainability.</div>
       <div class="project-tags">
-        <span class="project-tag">Healthcare Finance</span>
-        <span class="project-tag">Payer Mix</span>
-        <span class="project-tag">Revenue Cycle</span>
-        <span class="project-tag">Strategy</span>
+        <span class="project-tag">Healthcare Finance</span><span class="project-tag">Payer Mix</span><span class="project-tag">Revenue Cycle</span><span class="project-tag">Strategy</span>
       </div>
     </div>
-
     <div class="project-card">
-      <div class="project-type">Bachelor’s Project</div>
+      <div class="project-type">Bachelor's Project</div>
       <div class="project-title">Scale-up Production, Characterization and Evaluation of L-Aspartic Acid by Immobilized E.coli Cells</div>
-      <div class="project-desc">
-        A biotechnology and pharmaceutical science project focused on immobilization methods, L-aspartic acid production, and evaluation of industrial and biomedical applications.
-      </div>
+      <div class="project-desc">A biotechnology and pharmaceutical science project focused on immobilization methods, L-aspartic acid production, and evaluation of industrial and biomedical applications.</div>
       <div class="project-tags">
-        <span class="project-tag">Biotechnology</span>
-        <span class="project-tag">Pharmaceutical Science</span>
-        <span class="project-tag">Research</span>
-        <span class="project-tag">E.coli</span>
+        <span class="project-tag">Biotechnology</span><span class="project-tag">Pharmaceutical Science</span><span class="project-tag">Research</span><span class="project-tag">E.coli</span>
       </div>
     </div>
   </div>
 </section>
+
 <!-- SKILLS -->
 <section id="skills">
   <div class="sec-header">
@@ -1109,32 +667,40 @@ footer{
   </div>
   <div class="skills-grid">
     <div class="skill-block">
-      <div class="sb-header"><span class="sb-icon">⚙️</span><span class="sb-title">Analytics & BI Tools</span></div>
-      <div class="sb-tags"><span class="sb-tag">SQL · PostgreSQL</span><span class="sb-tag">SQL Server</span><span class="sb-tag">Power BI</span><span class="sb-tag">DAX</span><span class="sb-tag">Tableau</span><span class="sb-tag">Python</span><span class="sb-tag">Pandas · NumPy</span><span class="sb-tag">Excel</span></div><span class="sb-tag">Predictive Analytics</span>
+      <div class="sb-header"><span class="sb-icon">⚙️</span><span class="sb-title">Analytics &amp; BI Tools</span></div>
+      <div class="sb-tags">
+        <span class="sb-tag">SQL · PostgreSQL</span><span class="sb-tag">SQL Server</span><span class="sb-tag">Power BI</span><span class="sb-tag">DAX</span><span class="sb-tag">Tableau</span><span class="sb-tag">Python</span><span class="sb-tag">Pandas · NumPy</span><span class="sb-tag">Excel</span><span class="sb-tag">Predictive Analytics</span>
+      </div>
     </div>
     <div class="skill-block">
       <div class="sb-header"><span class="sb-icon">🏥</span><span class="sb-title">Healthcare Data</span></div>
-      <div class="sb-tags"><span class="sb-tag">Claims Analysis</span><span class="sb-tag">EHR (Epic, Meditech)</span><span class="sb-tag">ADT Data</span><span class="sb-tag">CMS Datasets</span><span class="sb-tag">Revenue Cycle</span><span class="sb-tag">Population Health</span><span class="sb-tag">NPI Registry</span></div><span class="sb-tag">HL7</span>
-<span class="sb-tag">FHIR</span>
-<span class="sb-tag">Healthcare Interoperability</span>
+      <div class="sb-tags">
+        <span class="sb-tag">Claims Analysis</span><span class="sb-tag">EHR (Epic, Meditech)</span><span class="sb-tag">ADT Data</span><span class="sb-tag">CMS Datasets</span><span class="sb-tag">Revenue Cycle</span><span class="sb-tag">Population Health</span><span class="sb-tag">NPI Registry</span><span class="sb-tag">HL7</span><span class="sb-tag">FHIR</span>
+      </div>
     </div>
     <div class="skill-block">
       <div class="sb-header"><span class="sb-icon">📋</span><span class="sb-title">Healthcare Standards</span></div>
-      <div class="sb-tags"><span class="sb-tag">ICD-10-CM</span><span class="sb-tag">CPT</span><span class="sb-tag">HCPCS</span><span class="sb-tag">DRG</span><span class="sb-tag">SNOMED</span><span class="sb-tag">LOINC</span><span class="sb-tag">CMS Quality Measures</span></div>
+      <div class="sb-tags">
+        <span class="sb-tag">ICD-10-CM</span><span class="sb-tag">CPT</span><span class="sb-tag">HCPCS</span><span class="sb-tag">DRG</span><span class="sb-tag">SNOMED</span><span class="sb-tag">LOINC</span><span class="sb-tag">CMS Quality Measures</span>
+      </div>
     </div>
     <div class="skill-block">
       <div class="sb-header"><span class="sb-icon">🔧</span><span class="sb-title">Data Engineering</span></div>
-      <div class="sb-tags"><span class="sb-tag">Data Modeling</span><span class="sb-tag">ETL Pipelines</span><span class="sb-tag">Cohort Analysis</span><span class="sb-tag">Call Transcript Analysis</span>
-<span class="sb-tag">AI-driven Insights</span><span class="sb-tag">Statistical Analysis</span>
-<span class="sb-tag">Trend Analysis</span><span class="sb-tag">Data Validation</span><span class="sb-tag">Data Quality</span><span class="sb-tag">Git</span></div>
+      <div class="sb-tags">
+        <span class="sb-tag">Data Modeling</span><span class="sb-tag">ETL Pipelines</span><span class="sb-tag">Cohort Analysis</span><span class="sb-tag">Call Transcript Analysis</span><span class="sb-tag">AI-driven Insights</span><span class="sb-tag">Statistical Analysis</span><span class="sb-tag">Trend Analysis</span><span class="sb-tag">Data Validation</span><span class="sb-tag">Data Quality</span><span class="sb-tag">Git</span>
+      </div>
     </div>
     <div class="skill-block">
-      <div class="sb-header"><span class="sb-icon">🔒</span><span class="sb-title">Compliance & Governance</span></div>
-      <div class="sb-tags"><span class="sb-tag">HIPAA</span><span class="sb-tag">CMS Compliance</span><span class="sb-tag">Audit Frameworks</span><span class="sb-tag">Data Governance</span><span class="sb-tag">835/837 Claims</span></div>
+      <div class="sb-header"><span class="sb-icon">🔒</span><span class="sb-title">Compliance &amp; Governance</span></div>
+      <div class="sb-tags">
+        <span class="sb-tag">HIPAA</span><span class="sb-tag">CMS Compliance</span><span class="sb-tag">Audit Frameworks</span><span class="sb-tag">Data Governance</span><span class="sb-tag">835/837 Claims</span><span class="sb-tag">Good Clinical Practice</span>
+      </div>
     </div>
     <div class="skill-block">
-      <div class="sb-header"><span class="sb-icon">📊</span><span class="sb-title">Reporting & Communication</span></div>
-      <div class="sb-tags"><span class="sb-tag">Dashboard Development</span><span class="sb-tag">KPI Reporting</span><span class="sb-tag">Data Storytelling & Insights</span><span class="sb-tag">Executive Presentations</span><span class="sb-tag">Ad Hoc Analysis</span></div>
+      <div class="sb-header"><span class="sb-icon">📊</span><span class="sb-title">Reporting &amp; Communication</span></div>
+      <div class="sb-tags">
+        <span class="sb-tag">Dashboard Development</span><span class="sb-tag">KPI Reporting</span><span class="sb-tag">Data Storytelling</span><span class="sb-tag">Executive Presentations</span><span class="sb-tag">Ad Hoc Analysis</span><span class="sb-tag">Performance Analysis</span>
+      </div>
     </div>
   </div>
 </section>
@@ -1159,7 +725,7 @@ footer{
         <div class="cert-row-icon">🔒</div>
         <div>
           <div class="cert-row-cat">Compliance &amp; Privacy</div>
-          <div class="cert-row-name">HIPAA Privacy &amp; Security Certification — American Health Training</div>
+          <div class="cert-row-name">HIPAA Privacy &amp; Security Training – Business Associate Level · American Health Training</div>
         </div>
       </div>
       <div class="cert-row">
@@ -1167,6 +733,27 @@ footer{
         <div>
           <div class="cert-row-cat">Digital Health Ethics</div>
           <div class="cert-row-name">Applied Digital Health Ethics — Digital Medicine Society</div>
+        </div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-row-icon">🔬</div>
+        <div>
+          <div class="cert-row-cat">Clinical Research</div>
+          <div class="cert-row-name">Clinical Research &amp; Clinical Data Management</div>
+        </div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-row-icon">📋</div>
+        <div>
+          <div class="cert-row-cat">Research Standards</div>
+          <div class="cert-row-name">Good Clinical Practice (GCP)</div>
+        </div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-row-icon">💊</div>
+        <div>
+          <div class="cert-row-cat">Professional License</div>
+          <div class="cert-row-name">Registered Pharmacist</div>
         </div>
       </div>
       <div class="cert-row">
@@ -1178,14 +765,18 @@ footer{
       </div>
     </div>
     <div class="edu-block">
-      <div class="edu-kicker">Graduate Education</div>
+      <div class="edu-kicker">Education</div>
       <div class="edu-degree">Master of Science in Health Informatics</div>
       <div class="edu-school">University of Denver</div>
       <div class="edu-gpa-box">
         <div class="edu-gpa-num">4.0</div>
         <div class="edu-gpa-label">GPA</div>
       </div>
-      <div class="edu-year">Graduated August 2025</div>
+      <div class="edu-year">Jan 2024 – Aug 2025</div>
+      <div class="edu-divider"></div>
+      <div class="edu-degree-secondary">Bachelor of Pharmacy</div>
+      <div class="edu-school-secondary">Malla Reddy College of Pharmacy, India</div>
+      <div class="edu-year" style="margin-top:0.5rem;">Aug 2018 – Aug 2022</div>
     </div>
   </div>
 </section>
@@ -1212,9 +803,13 @@ footer{
           <div class="cl-icon">💼</div>
           <div><div class="cl-label">LinkedIn</div><div class="cl-val">pavan-kumar-goud-javaji</div></div>
         </a>
+        <a href="https://pavankumarjavaji117-eng.github.io/portfolio/" target="_blank" class="contact-link">
+          <div class="cl-icon">💻</div>
+          <div><div class="cl-label">Portfolio</div><div class="cl-val">pavankumarjavaji117-eng.github.io</div></div>
+        </a>
         <div class="contact-link">
           <div class="cl-icon">📍</div>
-          <div><div class="cl-label">Location</div><div class="cl-val">Denver, CO — Open to Relocation</div></div>
+          <div><div class="cl-label">Location</div><div class="cl-val">Aurora, CO — Open to Relocation</div></div>
         </div>
       </div>
     </div>
@@ -1242,7 +837,7 @@ footer{
           </div>
           <div class="avail-item">
             <span class="avail-item-icon">📍</span>
-            <div class="avail-item-text"><strong>Denver Metro Area</strong> — On-site or hybrid, with full flexibility for remote roles nationwide.</div>
+            <div class="avail-item-text"><strong>Aurora / Denver Metro</strong> — On-site or hybrid, with full flexibility for remote roles nationwide.</div>
           </div>
         </div>
       </div>
@@ -1255,7 +850,7 @@ footer{
     Pavan Kumar Goud Javaji
     <span>Healthcare Data Analyst · MS Health Informatics · PL-300</span>
   </div>
-  <div class="footer-copy">©️ 2026 · Denver, CO, USA</div>
+  <div class="footer-copy">©️ 2026 · Aurora, CO, USA</div>
 </footer>
 
 <script>
