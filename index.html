@@ -49,17 +49,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--white);bord
 @keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,0.5)}50%{box-shadow:0 0 0 5px rgba(74,222,128,0)}}
 .hero-eyebrow-text{font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.8);letter-spacing:0.06em;text-transform:uppercase;}
 .hero-name{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:700;color:var(--white);line-height:1.1;letter-spacing:-0.01em;margin-bottom:0.5rem;}
-.hero-name span{color:rgba(255,255,255,0.45);font-weight:600;}
-.hero-tagline{
-  font-size:1rem;
-  color:rgba(255,255,255,0.75);
-  margin-top:0.8rem;
-  margin-bottom:1.8rem;
-  font-weight:400;
-  letter-spacing:0.02em;
-}
-
-.hero-credential{display:inline-flex;align-items:center;gap:8px;margin-bottom:1.8rem;flex-wrap:wrap;}
+.hero-tagline{font-size:1rem;color:rgba(255,255,255,0.75);margin-top:0.8rem;margin-bottom:1.4rem;font-weight:400;letter-spacing:0.02em;}
+/* PL-300 cert badge strip */
+.hero-cert-badge{display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:6px;padding:0.55rem 1.1rem;margin-bottom:1.6rem;width:fit-content;}
+.hero-cert-badge-svg{width:38px;height:38px;flex-shrink:0;}
+.hero-cert-badge-text{display:flex;flex-direction:column;gap:1px;}
+.hero-cert-badge-label{font-size:0.6rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;font-weight:700;}
+.hero-cert-badge-name{font-size:0.83rem;font-weight:700;color:var(--white);}
 .hero-credential{display:inline-flex;align-items:center;gap:8px;margin-bottom:1.8rem;flex-wrap:wrap;}
 .cred-pill{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:3px;padding:0.3rem 0.8rem;font-size:0.72rem;font-weight:700;color:rgba(255,255,255,0.85);letter-spacing:0.08em;text-transform:uppercase;font-family:'DM Mono',monospace;}
 .hero-desc{font-size:1.05rem;line-height:1.85;color:rgba(255,255,255,0.72);max-width:560px;margin-bottom:2.5rem;font-weight:300;}
@@ -174,6 +170,10 @@ section{padding:5.5rem 5%;}
 .cert-row{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.3rem 1.5rem;display:flex;align-items:center;gap:1.2rem;transition:border-color 0.2s,box-shadow 0.2s;}
 .cert-row:hover{border-color:var(--blue-bright);box-shadow:0 4px 16px rgba(0,58,107,0.08);}
 .cert-row-icon{width:44px;height:44px;border-radius:8px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+/* Featured PL-300 cert */
+.cert-row.featured{border:2px solid var(--blue-bright);background:var(--blue-xlight);position:relative;}
+.cert-row.featured::before{content:'MICROSOFT CERTIFIED';position:absolute;top:-1px;right:12px;background:var(--blue-bright);color:white;font-size:0.57rem;font-weight:800;letter-spacing:0.1em;padding:0.15rem 0.55rem;border-radius:0 0 4px 4px;}
+.cert-ms-badge{width:52px;height:52px;flex-shrink:0;}
 .cert-row-cat{font-size:0.65rem;font-weight:700;color:var(--blue-bright);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;}
 .cert-row-name{font-size:0.88rem;font-weight:700;color:var(--blue-deep);line-height:1.35;}
 .edu-block{background:var(--blue-deep);border-radius:10px;padding:2.5rem;color:var(--white);position:relative;overflow:hidden;}
@@ -257,16 +257,33 @@ footer{background:var(--blue-deep);color:var(--white);padding:2rem 5%;display:fl
   <div class="hero-left">
     <div class="hero-eyebrow">
       <div class="hero-eyebrow-dot"></div>
-      <span class="hero-eyebrow-text">Open to Healthcare Analytics Opportunities ·Open to Relocate · Denver, CO</span>
+      <span class="hero-eyebrow-text">Open to Healthcare Analytics Opportunities · Open to Relocate · Denver, CO</span>
     </div>
-    <h1 class="hero-name">
-      Pavan Kumar Goud Javaji<br>
-    </h1>
+    <h1 class="hero-name">Pavan Kumar Goud Javaji</h1>
 
     <div class="hero-tagline">
-      Turning Healthcare Data into Revenue &amp; Operational Impact
+      Turning Healthcare Data into Revenue &amp; Operational Impact · PL-300 Certified Power BI Data Analyst Associate
     </div>
-    </h1>
+
+    <!-- Microsoft PL-300 Badge Strip -->
+    <div class="hero-cert-badge">
+      <svg class="hero-cert-badge-svg" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <polygon points="65,4 122,34 122,96 65,126 8,96 8,34" fill="#0078D4"/>
+        <polygon points="65,12 114,38.5 114,91.5 65,118 16,91.5 16,38.5" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+        <rect x="44" y="44" width="16" height="16" fill="#F25022"/>
+        <rect x="62" y="44" width="16" height="16" fill="#7FBA00"/>
+        <rect x="44" y="62" width="16" height="16" fill="#00A4EF"/>
+        <rect x="62" y="62" width="16" height="16" fill="#FFB900"/>
+        <path d="M50,90 L65,100 L80,90 L80,112 L65,122 L50,112 Z" fill="#005A9E"/>
+        <path d="M50,90 L65,100 L80,90 L80,94 L65,104 L50,94 Z" fill="rgba(255,255,255,0.18)"/>
+        <text x="65" y="110" text-anchor="middle" fill="white" font-size="11" font-weight="bold">★</text>
+      </svg>
+      <div class="hero-cert-badge-text">
+        <span class="hero-cert-badge-label">Microsoft Certified · Associate</span>
+        <span class="hero-cert-badge-name">PL-300 · Power BI Data Analyst Associate</span>
+      </div>
+    </div>
+
     <div class="hero-credential">
       <span class="cred-pill">Healthcare Data Analyst</span>
       <span class="cred-pill">Revenue Cycle &amp; Claims</span>
@@ -343,26 +360,11 @@ footer{background:var(--blue-deep);color:var(--white);padding:2rem 5%;display:fl
     <p class="sec-subtitle">The outcomes I focus on are measurable, recruiter-friendly, and tied directly to healthcare business performance.</p>
   </div>
   <div class="impact-grid">
-    <div class="impact-card">
-      <div class="impact-value">25%+</div>
-      <div class="impact-label">Improvement in data accuracy through validation and anomaly checks</div>
-    </div>
-    <div class="impact-card">
-      <div class="impact-value">40%</div>
-      <div class="impact-label">Reduction in reporting turnaround time through automation</div>
-    </div>
-    <div class="impact-card">
-      <div class="impact-value">10+</div>
-      <div class="impact-label">Dashboards built for financial, clinical, and operational decision-making</div>
-    </div>
-    <div class="impact-card">
-      <div class="impact-value">15%</div>
-      <div class="impact-label">Reduction in claim rejection patterns through reporting and analysis</div>
-    </div>
-    <div class="impact-card">
-      <div class="impact-value">$15K–$25K</div>
-      <div class="impact-label">Estimated monthly revenue opportunity identified per CCM practice</div>
-    </div>
+    <div class="impact-card"><div class="impact-value">25%+</div><div class="impact-label">Improvement in data accuracy through validation and anomaly checks</div></div>
+    <div class="impact-card"><div class="impact-value">40%</div><div class="impact-label">Reduction in reporting turnaround time through automation</div></div>
+    <div class="impact-card"><div class="impact-value">10+</div><div class="impact-label">Dashboards built for financial, clinical, and operational decision-making</div></div>
+    <div class="impact-card"><div class="impact-value">15%</div><div class="impact-label">Reduction in claim rejection patterns through reporting and analysis</div></div>
+    <div class="impact-card"><div class="impact-value">$15K–$25K</div><div class="impact-label">Estimated monthly revenue opportunity identified per CCM practice</div></div>
   </div>
 </section>
 
@@ -437,34 +439,13 @@ footer{background:var(--blue-deep);color:var(--white);padding:2rem 5%;display:fl
           <div class="profile-role">Healthcare Data Analyst</div>
         </div>
         <div class="profile-card-body">
-          <div class="profile-row">
-            <span class="pr-icon">📍</span>
-            <div><div class="pr-key">Location</div><div class="pr-val">Denver, CO, USA</div></div>
-          </div>
-          <div class="profile-row">
-            <span class="pr-icon">🎓</span>
-            <div><div class="pr-key">Education</div><div class="pr-val">MS Health Informatics · GPA 4.0</div></div>
-          </div>
-          <div class="profile-row">
-            <span class="pr-icon">🏅</span>
-            <div><div class="pr-key">Certification</div><div class="pr-val">Power BI · PL-300 Track</div></div>
-          </div>
-          <div class="profile-row">
-            <span class="pr-icon">📞</span>
-            <div><div class="pr-key">Phone</div><div class="pr-val">+1 720 341 5900</div></div>
-          </div>
-          <div class="profile-row">
-            <span class="pr-icon">✉️</span>
-            <div><div class="pr-key">Email</div><div class="pr-val" style="font-size:0.78rem;">pavankumarjavaji117@gmail.com</div></div>
-          </div>
-          <div class="profile-row">
-            <span class="pr-icon">💻</span>
-            <div><div class="pr-key">Portfolio</div><div class="pr-val" style="font-size:0.78rem;">pavankumarjavaji117-eng.github.io/portfolio</div></div>
-          </div>
-          <div class="profile-row">
-            <span class="pr-icon">🟢</span>
-            <div><div class="pr-key">Availability</div><div class="pr-val green">Open to Healthcare Analytics Roles</div></div>
-          </div>
+          <div class="profile-row"><span class="pr-icon">📍</span><div><div class="pr-key">Location</div><div class="pr-val">Denver, CO, USA</div></div></div>
+          <div class="profile-row"><span class="pr-icon">🎓</span><div><div class="pr-key">Education</div><div class="pr-val">MS Health Informatics · GPA 4.0</div></div></div>
+          <div class="profile-row"><span class="pr-icon">🏅</span><div><div class="pr-key">Certification</div><div class="pr-val">PL-300 · Power BI Data Analyst Associate</div></div></div>
+          <div class="profile-row"><span class="pr-icon">📞</span><div><div class="pr-key">Phone</div><div class="pr-val">+1 720 341 5900</div></div></div>
+          <div class="profile-row"><span class="pr-icon">✉️</span><div><div class="pr-key">Email</div><div class="pr-val" style="font-size:0.78rem;">pavankumarjavaji117@gmail.com</div></div></div>
+          <div class="profile-row"><span class="pr-icon">💻</span><div><div class="pr-key">Portfolio</div><div class="pr-val" style="font-size:0.78rem;">pavankumarjavaji117-eng.github.io/portfolio</div></div></div>
+          <div class="profile-row"><span class="pr-icon">🟢</span><div><div class="pr-key">Availability</div><div class="pr-val green">Open to Healthcare Analytics Roles</div></div></div>
         </div>
       </div>
     </div>
@@ -484,29 +465,13 @@ footer{background:var(--blue-deep);color:var(--white);padding:2rem 5%;display:fl
         <div class="exp-sidebar-count">5</div>
         <div class="exp-sidebar-sub">Across US &amp; India</div>
       </div>
-      <div class="exp-tab active" onclick="showExp('e1',this)">
-        <div class="exp-tab-co">Pertexa Health Tech</div>
-        <div class="exp-tab-yr">Mar 2026 – Present</div>
-      </div>
-      <div class="exp-tab" onclick="showExp('e2',this)">
-        <div class="exp-tab-co">Pertexa Health Tech</div>
-        <div class="exp-tab-yr">Dec 2025 – Feb 2026</div>
-      </div>
-      <div class="exp-tab" onclick="showExp('e3',this)">
-        <div class="exp-tab-co">PAM Health</div>
-        <div class="exp-tab-yr">May 2025 – Nov 2025</div>
-      </div>
-      <div class="exp-tab" onclick="showExp('e4',this)">
-        <div class="exp-tab-co">KIMS Hospital</div>
-        <div class="exp-tab-yr">Jan 2023 – Dec 2023</div>
-      </div>
-      <div class="exp-tab" onclick="showExp('e5',this)">
-        <div class="exp-tab-co">Apollo Hospitals</div>
-        <div class="exp-tab-yr">Aug 2021 – Dec 2022</div>
-      </div>
+      <div class="exp-tab active" onclick="showExp('e1',this)"><div class="exp-tab-co">Pertexa Health Tech</div><div class="exp-tab-yr">Mar 2026 – Present</div></div>
+      <div class="exp-tab" onclick="showExp('e2',this)"><div class="exp-tab-co">Pertexa Health Tech</div><div class="exp-tab-yr">Dec 2025 – Feb 2026</div></div>
+      <div class="exp-tab" onclick="showExp('e3',this)"><div class="exp-tab-co">PAM Health</div><div class="exp-tab-yr">May 2025 – Nov 2025</div></div>
+      <div class="exp-tab" onclick="showExp('e4',this)"><div class="exp-tab-co">KIMS Hospital</div><div class="exp-tab-yr">Jan 2023 – Dec 2023</div></div>
+      <div class="exp-tab" onclick="showExp('e5',this)"><div class="exp-tab-co">Apollo Hospitals</div><div class="exp-tab-yr">Aug 2021 – Dec 2022</div></div>
     </div>
     <div class="exp-content">
-
       <div class="exp-panel active" id="e1">
         <div class="exp-co-name">Pertexa Health Tech</div>
         <div class="exp-badges">
@@ -526,7 +491,6 @@ footer{background:var(--blue-deep);color:var(--white);padding:2rem 5%;display:fl
           <span class="exp-stack-pill">SQL</span><span class="exp-stack-pill">CMS Data</span><span class="exp-stack-pill">NPI Registry</span><span class="exp-stack-pill">Power BI</span><span class="exp-stack-pill">CCM</span><span class="exp-stack-pill">Provider Scoring</span><span class="exp-stack-pill">GHL CRM</span>
         </div>
       </div>
-
       <div class="exp-panel" id="e2">
         <div class="exp-co-name">Pertexa Health Tech</div>
         <div class="exp-badges">
@@ -546,7 +510,6 @@ footer{background:var(--blue-deep);color:var(--white);padding:2rem 5%;display:fl
           <span class="exp-stack-pill">Revenue Cycle</span><span class="exp-stack-pill">835/837</span><span class="exp-stack-pill">PostgreSQL</span><span class="exp-stack-pill">Power BI</span><span class="exp-stack-pill">Python</span><span class="exp-stack-pill">CLV Modeling</span>
         </div>
       </div>
-
       <div class="exp-panel" id="e3">
         <div class="exp-co-name">PAM Health Specialty Hospitals</div>
         <div class="exp-badges">
@@ -564,7 +527,6 @@ footer{background:var(--blue-deep);color:var(--white);padding:2rem 5%;display:fl
           <span class="exp-stack-pill">ADT Analytics</span><span class="exp-stack-pill">LOS</span><span class="exp-stack-pill">Readmissions</span><span class="exp-stack-pill">SQL</span><span class="exp-stack-pill">Clinical Reporting</span><span class="exp-stack-pill">Power BI</span>
         </div>
       </div>
-
       <div class="exp-panel" id="e4">
         <div class="exp-co-name">KIMS Hospital</div>
         <div class="exp-badges">
@@ -582,7 +544,6 @@ footer{background:var(--blue-deep);color:var(--white);padding:2rem 5%;display:fl
           <span class="exp-stack-pill">Medical Records</span><span class="exp-stack-pill">SQL</span><span class="exp-stack-pill">ICD-10-CM</span><span class="exp-stack-pill">Audit Readiness</span><span class="exp-stack-pill">Data Validation</span>
         </div>
       </div>
-
       <div class="exp-panel" id="e5">
         <div class="exp-co-name">Apollo Hospitals</div>
         <div class="exp-badges">
@@ -600,7 +561,6 @@ footer{background:var(--blue-deep);color:var(--white);padding:2rem 5%;display:fl
           <span class="exp-stack-pill">Patient Access</span><span class="exp-stack-pill">Scheduling Analytics</span><span class="exp-stack-pill">SQL</span><span class="exp-stack-pill">Operational Reporting</span>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -616,33 +576,25 @@ footer{background:var(--blue-deep);color:var(--white);padding:2rem 5%;display:fl
       <div class="project-type">Current Initiative</div>
       <div class="project-title">Provider Targeting Engine for CCM Growth</div>
       <div class="project-desc">Built a physician targeting framework using CMS, NPI, and utilization data to identify independent practices, prioritize outreach, and estimate CCM revenue opportunity across Arizona and Florida.</div>
-      <div class="project-tags">
-        <span class="project-tag">CMS Data</span><span class="project-tag">NPI Registry</span><span class="project-tag">Provider Scoring</span><span class="project-tag">CCM</span><span class="project-tag">SQL</span>
-      </div>
+      <div class="project-tags"><span class="project-tag">CMS Data</span><span class="project-tag">NPI Registry</span><span class="project-tag">Provider Scoring</span><span class="project-tag">CCM</span><span class="project-tag">SQL</span></div>
     </div>
     <div class="project-card">
       <div class="project-type">Healthcare Analytics Platform</div>
       <div class="project-title">Patient 360 &amp; Revenue Cycle Intelligence Dashboard</div>
       <div class="project-desc">Built an end-to-end analytics solution integrating patient, encounter, payer, medication, and condition data to surface revenue trends, denial patterns, patient value insights, and operational performance metrics.</div>
-      <div class="project-tags">
-        <span class="project-tag">PostgreSQL</span><span class="project-tag">Power BI</span><span class="project-tag">Python</span><span class="project-tag">Revenue Cycle</span><span class="project-tag">Patient 360</span>
-      </div>
+      <div class="project-tags"><span class="project-tag">PostgreSQL</span><span class="project-tag">Power BI</span><span class="project-tag">Python</span><span class="project-tag">Revenue Cycle</span><span class="project-tag">Patient 360</span></div>
     </div>
     <div class="project-card">
       <div class="project-type">Master's Capstone</div>
       <div class="project-title">AI-Powered Pharmacovigilance for Older Adults</div>
       <div class="project-desc">Explored how AI, NLP, and machine learning can improve adverse drug reaction detection using EHR, telehealth, and clinical text data, with a focus on older adult safety and more proactive intervention.</div>
-      <div class="project-tags">
-        <span class="project-tag">AI in Healthcare</span><span class="project-tag">NLP</span><span class="project-tag">Machine Learning</span><span class="project-tag">Pharmacovigilance</span>
-      </div>
+      <div class="project-tags"><span class="project-tag">AI in Healthcare</span><span class="project-tag">NLP</span><span class="project-tag">Machine Learning</span><span class="project-tag">Pharmacovigilance</span></div>
     </div>
     <div class="project-card">
       <div class="project-type">Data Engineering Project</div>
       <div class="project-title">Healthcare Data Warehouse Development</div>
       <div class="project-desc">Designed a healthcare data warehouse with fact and dimension modeling, ETL logic, and reporting structures to support patient flow, readmissions, cost analysis, and provider performance aligned with HL7/FHIR concepts.</div>
-      <div class="project-tags">
-        <span class="project-tag">Data Warehouse</span><span class="project-tag">SQL</span><span class="project-tag">ETL</span><span class="project-tag">HL7/FHIR</span>
-      </div>
+      <div class="project-tags"><span class="project-tag">Data Warehouse</span><span class="project-tag">SQL</span><span class="project-tag">ETL</span><span class="project-tag">HL7/FHIR</span></div>
     </div>
   </div>
 </section>
@@ -656,39 +608,27 @@ footer{background:var(--blue-deep);color:var(--white);padding:2rem 5%;display:fl
   <div class="skills-grid">
     <div class="skill-block">
       <div class="sb-header"><span class="sb-icon">🏥</span><span class="sb-title">Healthcare Analytics</span></div>
-      <div class="sb-tags">
-        <span class="sb-tag">Revenue Cycle Analytics</span><span class="sb-tag">Claims Analysis</span><span class="sb-tag">Population Health</span><span class="sb-tag">CCM</span><span class="sb-tag">Clinical Operations</span><span class="sb-tag">Provider Analytics</span>
-      </div>
+      <div class="sb-tags"><span class="sb-tag">Revenue Cycle Analytics</span><span class="sb-tag">Claims Analysis</span><span class="sb-tag">Population Health</span><span class="sb-tag">CCM</span><span class="sb-tag">Clinical Operations</span><span class="sb-tag">Provider Analytics</span></div>
     </div>
     <div class="skill-block">
       <div class="sb-header"><span class="sb-icon">⚙️</span><span class="sb-title">Data &amp; Programming</span></div>
-      <div class="sb-tags">
-        <span class="sb-tag">SQL</span><span class="sb-tag">PostgreSQL</span><span class="sb-tag">SQL Server</span><span class="sb-tag">SAS</span><span class="sb-tag">PROC SQL</span><span class="sb-tag">Python</span><span class="sb-tag">Pandas</span><span class="sb-tag">NumPy</span>
-      </div>
+      <div class="sb-tags"><span class="sb-tag">SQL</span><span class="sb-tag">PostgreSQL</span><span class="sb-tag">SQL Server</span><span class="sb-tag">SAS</span><span class="sb-tag">PROC SQL</span><span class="sb-tag">Python</span><span class="sb-tag">Pandas</span><span class="sb-tag">NumPy</span></div>
     </div>
     <div class="skill-block">
       <div class="sb-header"><span class="sb-icon">📊</span><span class="sb-title">BI &amp; Visualization</span></div>
-      <div class="sb-tags">
-        <span class="sb-tag">Power BI</span><span class="sb-tag">DAX</span><span class="sb-tag">Tableau</span><span class="sb-tag">Excel</span><span class="sb-tag">Dashboard Development</span><span class="sb-tag">KPI Reporting</span>
-      </div>
+      <div class="sb-tags"><span class="sb-tag">Power BI</span><span class="sb-tag">DAX</span><span class="sb-tag">Tableau</span><span class="sb-tag">Excel</span><span class="sb-tag">Dashboard Development</span><span class="sb-tag">KPI Reporting</span></div>
     </div>
     <div class="skill-block">
       <div class="sb-header"><span class="sb-icon">🧠</span><span class="sb-title">Analysis &amp; Modeling</span></div>
-      <div class="sb-tags">
-        <span class="sb-tag">Cohort Analysis</span><span class="sb-tag">Risk Stratification</span><span class="sb-tag">CLV Modeling</span><span class="sb-tag">Trend Analysis</span><span class="sb-tag">Segmentation Models</span><span class="sb-tag">Data Validation</span>
-      </div>
+      <div class="sb-tags"><span class="sb-tag">Cohort Analysis</span><span class="sb-tag">Risk Stratification</span><span class="sb-tag">CLV Modeling</span><span class="sb-tag">Trend Analysis</span><span class="sb-tag">Segmentation Models</span><span class="sb-tag">Data Validation</span></div>
     </div>
     <div class="skill-block">
       <div class="sb-header"><span class="sb-icon">📋</span><span class="sb-title">Healthcare Systems &amp; Standards</span></div>
-      <div class="sb-tags">
-        <span class="sb-tag">Epic</span><span class="sb-tag">Meditech</span><span class="sb-tag">HL7</span><span class="sb-tag">FHIR</span><span class="sb-tag">ICD-10-CM</span><span class="sb-tag">CPT/HCPCS</span>
-      </div>
+      <div class="sb-tags"><span class="sb-tag">Epic</span><span class="sb-tag">Meditech</span><span class="sb-tag">HL7</span><span class="sb-tag">FHIR</span><span class="sb-tag">ICD-10-CM</span><span class="sb-tag">CPT/HCPCS</span></div>
     </div>
     <div class="skill-block">
       <div class="sb-header"><span class="sb-icon">🔒</span><span class="sb-title">Governance &amp; Delivery</span></div>
-      <div class="sb-tags">
-        <span class="sb-tag">HIPAA</span><span class="sb-tag">CMS Compliance</span><span class="sb-tag">Data Governance</span><span class="sb-tag">Stakeholder Reporting</span><span class="sb-tag">Project Coordination</span><span class="sb-tag">CRM Integration</span>
-      </div>
+      <div class="sb-tags"><span class="sb-tag">HIPAA</span><span class="sb-tag">CMS Compliance</span><span class="sb-tag">Data Governance</span><span class="sb-tag">Stakeholder Reporting</span><span class="sb-tag">Project Coordination</span><span class="sb-tag">CRM Integration</span></div>
     </div>
   </div>
 </section>
@@ -701,47 +641,45 @@ footer{background:var(--blue-deep);color:var(--white);padding:2rem 5%;display:fl
   </div>
   <div class="creds-layout">
     <div class="certs-list">
-      <div class="cert-row">
-        <div class="cert-row-icon">📊</div>
+
+      <!-- ── FEATURED PL-300 with Microsoft Certified badge SVG ── -->
+      <div class="cert-row featured">
+        <svg class="cert-ms-badge" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <polygon points="65,4 122,34 122,96 65,126 8,96 8,34" fill="#0078D4"/>
+          <polygon points="65,12 114,38.5 114,91.5 65,118 16,91.5 16,38.5" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+          <rect x="44" y="44" width="16" height="16" fill="#F25022"/>
+          <rect x="62" y="44" width="16" height="16" fill="#7FBA00"/>
+          <rect x="44" y="62" width="16" height="16" fill="#00A4EF"/>
+          <rect x="62" y="62" width="16" height="16" fill="#FFB900"/>
+          <path d="M50,90 L65,100 L80,90 L80,112 L65,122 L50,112 Z" fill="#005A9E"/>
+          <path d="M50,90 L65,100 L80,90 L80,94 L65,104 L50,94 Z" fill="rgba(255,255,255,0.18)"/>
+          <text x="65" y="110" text-anchor="middle" fill="white" font-size="11" font-weight="bold">★</text>
+        </svg>
         <div>
-          <div class="cert-row-cat">Microsoft Pathway</div>
-          <div class="cert-row-name">Power BI Data Analyst (PL-300) Track</div>
+          <div class="cert-row-cat">Microsoft Certified · Associate</div>
+          <div class="cert-row-name">Power BI Data Analyst Associate (PL-300)</div>
         </div>
       </div>
+
       <div class="cert-row">
         <div class="cert-row-icon">🔒</div>
-        <div>
-          <div class="cert-row-cat">Compliance &amp; Privacy</div>
-          <div class="cert-row-name">HIPAA Privacy &amp; Security Training — Business Associate Level</div>
-        </div>
+        <div><div class="cert-row-cat">Compliance &amp; Privacy</div><div class="cert-row-name">HIPAA Privacy &amp; Security Training — Business Associate Level</div></div>
       </div>
       <div class="cert-row">
         <div class="cert-row-icon">⚕️</div>
-        <div>
-          <div class="cert-row-cat">Digital Health Ethics</div>
-          <div class="cert-row-name">Applied Digital Health Ethics</div>
-        </div>
+        <div><div class="cert-row-cat">Digital Health Ethics</div><div class="cert-row-name">Applied Digital Health Ethics</div></div>
       </div>
       <div class="cert-row">
         <div class="cert-row-icon">🔬</div>
-        <div>
-          <div class="cert-row-cat">Clinical Research</div>
-          <div class="cert-row-name">Clinical Research &amp; Clinical Data Management</div>
-        </div>
+        <div><div class="cert-row-cat">Clinical Research</div><div class="cert-row-name">Clinical Research &amp; Clinical Data Management</div></div>
       </div>
       <div class="cert-row">
         <div class="cert-row-icon">📋</div>
-        <div>
-          <div class="cert-row-cat">Research Standards</div>
-          <div class="cert-row-name">Good Clinical Practice (GCP)</div>
-        </div>
+        <div><div class="cert-row-cat">Research Standards</div><div class="cert-row-name">Good Clinical Practice (GCP)</div></div>
       </div>
       <div class="cert-row">
         <div class="cert-row-icon">💊</div>
-        <div>
-          <div class="cert-row-cat">Professional Credential</div>
-          <div class="cert-row-name">Registered Pharmacist</div>
-        </div>
+        <div><div class="cert-row-cat">Professional Credential</div><div class="cert-row-name">Registered Pharmacist</div></div>
       </div>
     </div>
     <div class="edu-block">
@@ -802,22 +740,10 @@ footer{background:var(--blue-deep);color:var(--white);padding:2rem 5%;display:fl
           <div class="avail-headline">Open to full-time roles, contract engagements &amp; consulting.</div>
         </div>
         <div class="avail-body">
-          <div class="avail-item">
-            <span class="avail-item-icon">🏥</span>
-            <div class="avail-item-text"><strong>Healthcare Organizations</strong> — Hospitals, health systems, specialty care, and payers.</div>
-          </div>
-          <div class="avail-item">
-            <span class="avail-item-icon">💻</span>
-            <div class="avail-item-text"><strong>Health Tech Companies</strong> — Analytics platforms, EHR vendors, population health companies.</div>
-          </div>
-          <div class="avail-item">
-            <span class="avail-item-icon">📊</span>
-            <div class="avail-item-text"><strong>Consulting &amp; Advisory</strong> — Revenue cycle, data quality, compliance, and BI projects.</div>
-          </div>
-          <div class="avail-item">
-            <span class="avail-item-icon">📍</span>
-            <div class="avail-item-text"><strong>Denver</strong> — On-site or hybrid, with full flexibility for remote roles nationwide.</div>
-          </div>
+          <div class="avail-item"><span class="avail-item-icon">🏥</span><div class="avail-item-text"><strong>Healthcare Organizations</strong> — Hospitals, health systems, specialty care, and payers.</div></div>
+          <div class="avail-item"><span class="avail-item-icon">💻</span><div class="avail-item-text"><strong>Health Tech Companies</strong> — Analytics platforms, EHR vendors, population health companies.</div></div>
+          <div class="avail-item"><span class="avail-item-icon">📊</span><div class="avail-item-text"><strong>Consulting &amp; Advisory</strong> — Revenue cycle, data quality, compliance, and BI projects.</div></div>
+          <div class="avail-item"><span class="avail-item-icon">📍</span><div class="avail-item-text"><strong>Denver</strong> — On-site or hybrid, with full flexibility for remote roles nationwide.</div></div>
         </div>
       </div>
     </div>
@@ -827,7 +753,7 @@ footer{background:var(--blue-deep);color:var(--white);padding:2rem 5%;display:fl
 <footer>
   <div class="footer-brand">
     Pavan Kumar Goud Javaji
-    <span>Healthcare Data Analyst · Revenue Cycle · Population Health</span>
+    <span>Healthcare Data Analyst · Revenue Cycle · Population Health · PL-300 Certified</span>
   </div>
   <div class="footer-copy">©️ 2026 · Denver, CO, USA</div>
 </footer>
